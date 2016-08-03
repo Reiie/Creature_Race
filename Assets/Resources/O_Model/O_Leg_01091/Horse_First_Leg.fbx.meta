@@ -1,0 +1,166 @@
+fileFormatVersion: 2
+guid: ded8b14e3ff852940befbdb87b91eefc
+timeCreated: 1468562287
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Bone
+    100002: Bone.001
+    100004: Bone.002
+    100006: Bone.003
+    100008: Bone.003_end
+    100010: Bone.004
+    100012: Bone.005
+    100014: Bone.005_end
+    100016: //RootNode
+    100018: Horse_First_Leg_middle
+    100020: Horse_First_Leg_right_bottom
+    100022: Horse_First_Leg_right_middle
+    100024: Horse_First_Leg_top
+    400000: Bone
+    400002: Bone.001
+    400004: Bone.002
+    400006: Bone.003
+    400008: Bone.003_end
+    400010: Bone.004
+    400012: Bone.005
+    400014: Bone.005_end
+    400016: //RootNode
+    400018: Horse_First_Leg_middle
+    400020: Horse_First_Leg_right_bottom
+    400022: Horse_First_Leg_right_middle
+    400024: Horse_First_Leg_top
+    2300000: Horse_First_Leg_middle
+    2300002: Horse_First_Leg_right_bottom
+    2300004: Horse_First_Leg_right_middle
+    2300006: Horse_First_Leg_top
+    3300000: Horse_First_Leg_middle
+    3300002: Horse_First_Leg_right_bottom
+    3300004: Horse_First_Leg_right_middle
+    3300006: Horse_First_Leg_top
+    4300000: Horse_First_Leg_right_middle
+    4300002: Horse_First_Leg_right_bottom
+    4300004: Horse_First_Leg_top
+    4300006: Horse_First_Leg_middle
+    7400000: "\uC544\uBA38\uD29C\uC5B4|\uC544\uBA38\uD29C\uC5B4Action"
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 1
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 2
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: "\uC544\uBA38\uD29C\uC5B4|\uC544\uBA38\uD29C\uC5B4Action"
+      takeName: "\uC544\uBA38\uD29C\uC5B4|\uC544\uBA38\uD29C\uC5B4Action"
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bone
+        weight: 1
+      - path: Bone/Bone.004
+        weight: 1
+      - path: Bone/Bone.004/Bone.005
+        weight: 1
+      - path: Bone/Bone.004/Bone.005/Bone.005_end
+        weight: 1
+      - path: Bone/Bone.004/Bone.005/Horse_First_Leg_right_bottom
+        weight: 1
+      - path: Bone/Bone.004/Horse_First_Leg_right_middle
+        weight: 1
+      - path: Bone.001
+        weight: 1
+      - path: Bone.001/Bone.002
+        weight: 1
+      - path: Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Bone.001/Bone.002/Bone.003/Bone.003_end
+        weight: 1
+      - path: Bone.001/Bone.002/Bone.003/Horse_First_Leg_middle
+        weight: 1
+      - path: Bone.001/Bone.002/Horse_First_Leg_top
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

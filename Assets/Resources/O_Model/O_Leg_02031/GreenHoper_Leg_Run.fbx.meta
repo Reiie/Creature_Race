@@ -1,0 +1,188 @@
+fileFormatVersion: 2
+guid: 3f46352ed43a419489c3dfd55aeaf735
+timeCreated: 1468558698
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Bone
+    100002: Bone.001
+    100004: Bone.002
+    100006: Bone.003
+    100008: Bone.004
+    100010: Bone.004_end
+    100012: Bone.005
+    100014: Bone.006
+    100016: Bone.007
+    100018: Bone.007_end
+    100020: greenhoper_bottom_leg.000
+    100022: greenhoper_bottom_leg.001
+    100024: greenhoper_left_top_leg
+    100026: //RootNode
+    100028: greenhoper_middle_leg
+    100030: greenhoper_middle_leg.001
+    100032: greenhoper_right_top_leg
+    400000: Bone
+    400002: Bone.001
+    400004: Bone.002
+    400006: Bone.003
+    400008: Bone.004
+    400010: Bone.004_end
+    400012: Bone.005
+    400014: Bone.006
+    400016: Bone.007
+    400018: Bone.007_end
+    400020: greenhoper_bottom_leg.000
+    400022: greenhoper_bottom_leg.001
+    400024: greenhoper_left_top_leg
+    400026: //RootNode
+    400028: greenhoper_middle_leg
+    400030: greenhoper_middle_leg.001
+    400032: greenhoper_right_top_leg
+    2300000: greenhoper_bottom_leg.000
+    2300002: greenhoper_bottom_leg.001
+    2300004: greenhoper_left_top_leg
+    2300006: greenhoper_middle_leg
+    2300008: greenhoper_middle_leg.001
+    2300010: greenhoper_right_top_leg
+    3300000: greenhoper_bottom_leg.000
+    3300002: greenhoper_bottom_leg.001
+    3300004: greenhoper_left_top_leg
+    3300006: greenhoper_middle_leg
+    3300008: greenhoper_middle_leg.001
+    3300010: greenhoper_right_top_leg
+    4300000: greenhoper_left_top_leg
+    4300002: greenhoper_middle_leg
+    4300004: greenhoper_bottom_leg.001
+    4300006: greenhoper_right_top_leg
+    4300008: greenhoper_middle_leg.001
+    4300010: greenhoper_bottom_leg.000
+    7400000: Armature|ArmatureAction.002
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 1
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 2
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|ArmatureAction.002
+      takeName: Armature|ArmatureAction.002
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bone
+        weight: 1
+      - path: Bone/Bone.005
+        weight: 1
+      - path: Bone/Bone.005/Bone.006
+        weight: 1
+      - path: Bone/Bone.005/Bone.006/Bone.007
+        weight: 1
+      - path: Bone/Bone.005/Bone.006/Bone.007/Bone.007_end
+        weight: 1
+      - path: Bone/Bone.005/Bone.006/Bone.007/greenhoper_bottom_leg.001
+        weight: 1
+      - path: Bone/Bone.005/Bone.006/greenhoper_middle_leg
+        weight: 1
+      - path: Bone/Bone.005/greenhoper_left_top_leg
+        weight: 1
+      - path: Bone.001
+        weight: 1
+      - path: Bone.001/Bone.002
+        weight: 1
+      - path: Bone.001/Bone.002/Bone.003
+        weight: 1
+      - path: Bone.001/Bone.002/Bone.003/Bone.004
+        weight: 1
+      - path: Bone.001/Bone.002/Bone.003/Bone.004/Bone.004_end
+        weight: 1
+      - path: Bone.001/Bone.002/Bone.003/Bone.004/greenhoper_bottom_leg.000
+        weight: 1
+      - path: Bone.001/Bone.002/Bone.003/greenhoper_middle_leg.001
+        weight: 1
+      - path: Bone.001/Bone.002/greenhoper_right_top_leg
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

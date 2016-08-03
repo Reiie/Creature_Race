@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 854fd38b8b85847468fd5c27da9935be
+timeCreated: 1469424753
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - Water_Particle: {fileID: 195130, guid: 5c3321d0bfb5e034997ca4130232c1c7, type: 2}
+  - Collision_Effect: {fileID: 160708, guid: 26f60ae00154f58439bbce12cb38553b, type: 2}
+  - FKnock_Back_Effect: {fileID: 163096, guid: 8f3ddcb8a7a33aa43bac3d604db7a75c, type: 2}
+  - BKnock_Back_Effect: {fileID: 124448, guid: d9663b7428d625441bc4470c4502ed1b, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

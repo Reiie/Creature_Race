@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 9e963cc120ba1b0488dc8ed9314d2eb0
+timeCreated: 1469424791
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - Jumping_Effect: {fileID: 185602, guid: c34cf22f2b6d4c647999c1a3de598d5f, type: 2}
+  - Big_Jumping_Ready_Effect1: {fileID: 164264, guid: a33e46ed70c2b9d4f8c7484571880cd8,
+      type: 2}
+  - Big_Jumping_Ready_Effect2: {fileID: 141918, guid: 940b48a4076f1b64ebc067ab961bdbfb,
+      type: 2}
+  - Big_Jumping_Effect: {fileID: 166928, guid: 6dd6dec5ac2b8d849b19c78323b37455, type: 2}
+  - respawn: {instanceID: 0}
+  - Big_Jump_Target: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

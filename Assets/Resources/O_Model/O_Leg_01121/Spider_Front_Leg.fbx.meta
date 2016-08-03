@@ -1,0 +1,292 @@
+fileFormatVersion: 2
+guid: b10002b4ed35ea74dbe091e878871d51
+timeCreated: 1469170362
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Bone
+    100002: Bone.001
+    100004: Bone.002
+    100006: Bone.003
+    100008: Bone.003_end
+    100010: Bone.004
+    100012: Bone.005
+    100014: Bone.005_end
+    100016: Bone.006
+    100018: Bone.007
+    100020: Bone.007_end
+    100022: Bone.008
+    100024: Bone.009
+    100026: Bone.009_end
+    100028: //RootNode
+    100030: Spider_Front_Leg_Left_1
+    100032: Spider_Front_Leg_Left_2
+    100034: Spider_Front_Leg_Left_3
+    100036: Spider_Front_Leg_Left_4
+    100038: Spider_Front_Leg_right_1
+    100040: Spider_Front_Leg_right_2
+    100042: Spider_Front_Leg_right_3
+    100044: Spider_Front_Leg_right_4
+    400000: Bone
+    400002: Bone.001
+    400004: Bone.002
+    400006: Bone.003
+    400008: Bone.003_end
+    400010: Bone.004
+    400012: Bone.005
+    400014: Bone.005_end
+    400016: Bone.006
+    400018: Bone.007
+    400020: Bone.007_end
+    400022: Bone.008
+    400024: Bone.009
+    400026: Bone.009_end
+    400028: //RootNode
+    400030: Spider_Front_Leg_Left_1
+    400032: Spider_Front_Leg_Left_2
+    400034: Spider_Front_Leg_Left_3
+    400036: Spider_Front_Leg_Left_4
+    400038: Spider_Front_Leg_right_1
+    400040: Spider_Front_Leg_right_2
+    400042: Spider_Front_Leg_right_3
+    400044: Spider_Front_Leg_right_4
+    2300000: Spider_Front_Leg_Left_1
+    2300002: Spider_Front_Leg_Left_2
+    2300004: Spider_Front_Leg_Left_3
+    2300006: Spider_Front_Leg_Left_4
+    2300008: Spider_Front_Leg_right_1
+    2300010: Spider_Front_Leg_right_2
+    2300012: Spider_Front_Leg_right_3
+    2300014: Spider_Front_Leg_right_4
+    3300000: Spider_Front_Leg_Left_1
+    3300002: Spider_Front_Leg_Left_2
+    3300004: Spider_Front_Leg_Left_3
+    3300006: Spider_Front_Leg_Left_4
+    3300008: Spider_Front_Leg_right_1
+    3300010: Spider_Front_Leg_right_2
+    3300012: Spider_Front_Leg_right_3
+    3300014: Spider_Front_Leg_right_4
+    4300000: Spider_Front_Leg_Left_3
+    4300002: Spider_Front_Leg_Left_4
+    4300004: Spider_Front_Leg_Left_1
+    4300006: Spider_Front_Leg_Left_2
+    4300008: Spider_Front_Leg_right_3
+    4300010: Spider_Front_Leg_right_4
+    4300012: Spider_Front_Leg_right_1
+    4300014: Spider_Front_Leg_right_2
+    7400000: "\uC544\uBA38\uD29C\uC5B4|\uC544\uBA38\uD29C\uC5B4Action"
+    7400002: "\uC544\uBA38\uD29C\uC5B4|\uC544\uBA38\uD29C\uC5B4Action.001"
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: "\uC544\uBA38\uD29C\uC5B4|\uC544\uBA38\uD29C\uC5B4Action"
+      takeName: "\uC544\uBA38\uD29C\uC5B4|\uC544\uBA38\uD29C\uC5B4Action"
+      firstFrame: 0
+      lastFrame: 22
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bone
+        weight: 1
+      - path: Bone/Bone.002
+        weight: 1
+      - path: Bone/Bone.002/Bone.003
+        weight: 1
+      - path: Bone/Bone.002/Bone.003/Bone.003_end
+        weight: 1
+      - path: Bone/Bone.002/Bone.003/Spider_Front_Leg_Left_4
+        weight: 1
+      - path: Bone/Bone.002/Spider_Front_Leg_Left_3
+        weight: 1
+      - path: Bone/Bone.006
+        weight: 1
+      - path: Bone/Bone.006/Bone.007
+        weight: 1
+      - path: Bone/Bone.006/Bone.007/Bone.007_end
+        weight: 1
+      - path: Bone/Bone.006/Bone.007/Spider_Front_Leg_Left_2
+        weight: 1
+      - path: Bone/Bone.006/Spider_Front_Leg_Left_1
+        weight: 1
+      - path: Bone.001
+        weight: 1
+      - path: Bone.001/Bone.004
+        weight: 1
+      - path: Bone.001/Bone.004/Bone.005
+        weight: 1
+      - path: Bone.001/Bone.004/Bone.005/Bone.005_end
+        weight: 1
+      - path: Bone.001/Bone.004/Bone.005/Spider_Front_Leg_right_4
+        weight: 1
+      - path: Bone.001/Bone.004/Spider_Front_Leg_right_3
+        weight: 1
+      - path: Bone.001/Bone.008
+        weight: 1
+      - path: Bone.001/Bone.008/Bone.009
+        weight: 1
+      - path: Bone.001/Bone.008/Bone.009/Bone.009_end
+        weight: 1
+      - path: Bone.001/Bone.008/Bone.009/Spider_Front_Leg_right_2
+        weight: 1
+      - path: Bone.001/Bone.008/Spider_Front_Leg_right_1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: "\uC544\uBA38\uD29C\uC5B4|\uC544\uBA38\uD29C\uC5B4Action.001"
+      takeName: "\uC544\uBA38\uD29C\uC5B4|\uC544\uBA38\uD29C\uC5B4Action.001"
+      firstFrame: 0
+      lastFrame: 18
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bone
+        weight: 1
+      - path: Bone/Bone.002
+        weight: 1
+      - path: Bone/Bone.002/Bone.003
+        weight: 1
+      - path: Bone/Bone.002/Bone.003/Bone.003_end
+        weight: 1
+      - path: Bone/Bone.002/Bone.003/Spider_Front_Leg_Left_4
+        weight: 1
+      - path: Bone/Bone.002/Spider_Front_Leg_Left_3
+        weight: 1
+      - path: Bone/Bone.006
+        weight: 1
+      - path: Bone/Bone.006/Bone.007
+        weight: 1
+      - path: Bone/Bone.006/Bone.007/Bone.007_end
+        weight: 1
+      - path: Bone/Bone.006/Bone.007/Spider_Front_Leg_Left_2
+        weight: 1
+      - path: Bone/Bone.006/Spider_Front_Leg_Left_1
+        weight: 1
+      - path: Bone.001
+        weight: 1
+      - path: Bone.001/Bone.004
+        weight: 1
+      - path: Bone.001/Bone.004/Bone.005
+        weight: 1
+      - path: Bone.001/Bone.004/Bone.005/Bone.005_end
+        weight: 1
+      - path: Bone.001/Bone.004/Bone.005/Spider_Front_Leg_right_4
+        weight: 1
+      - path: Bone.001/Bone.004/Spider_Front_Leg_right_3
+        weight: 1
+      - path: Bone.001/Bone.008
+        weight: 1
+      - path: Bone.001/Bone.008/Bone.009
+        weight: 1
+      - path: Bone.001/Bone.008/Bone.009/Bone.009_end
+        weight: 1
+      - path: Bone.001/Bone.008/Bone.009/Spider_Front_Leg_right_2
+        weight: 1
+      - path: Bone.001/Bone.008/Spider_Front_Leg_right_1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

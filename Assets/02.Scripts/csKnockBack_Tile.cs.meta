@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d0e848bf9cc687a4296622a11e9c2f2c
+timeCreated: 1468293474
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - Bknock_Back: {fileID: 185756, guid: 00016dd68300fcd47ba51441c36e09cc, type: 2}
+  - Fknock_Back: {fileID: 148908, guid: bb94d43d693c8d44380e1dcd72ef0cff, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
