@@ -19,7 +19,7 @@ public class csCollisionCheck : MonoBehaviour
     int RoadFix = 0;
 
     public int Checking_Rep = 1;
-	float JUMPER_POWER = 16000;    /// 10000
+	float JUMPER_POWER = 10000;    /// 10000
 
     public float Y;
     public float Z;
@@ -71,6 +71,9 @@ public class csCollisionCheck : MonoBehaviour
             car_state.carState = csCarState.CARSTATE.READY;
             car.GetComponent<Rigidbody>().velocity = Vector3.zero;
             car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+
+            
+
             // car.m_Topspeed = 0;
         }
 
@@ -141,12 +144,19 @@ public class csCollisionCheck : MonoBehaviour
             }
         }
 
+        if (other.tag == "Force_Fixer1")
+        {
+            JUMPER_POWER = 13000;
+        }
+
         if (other.tag == "Stage2_Over")
         {
             Checking_Rep = 1;
 
             if (Checking_Rep == 1)
             {
+                GetComponent<Rigidbody>().AddForce(transform.TransformVector(0.0f, 0.0f, 5.0f) * 10.0f);
+
                 Ranking.Stage2_Over();
                 Lap_Time = GameTimer.Play_Time;
                 Game_End = true;
@@ -236,10 +246,15 @@ public class csCollisionCheck : MonoBehaviour
 
 		}
 
+        if (other.tag == "Last_Point")
+        {
+            car_state.respawn = other.gameObject.transform.FindChild("Point1").GetComponent<Transform>();
+        }
+
         if (other.tag == "Small_Jump_Area")
         {
 			car_state.carState = csCarState.CARSTATE.SMALL_JUMP;
-            
+            JUMPER_POWER = 13000;
             GetComponent<Rigidbody>().AddForce(transform.TransformVector(0.0f, 5.0f, 2.5f) * 1.0f);
             
         }

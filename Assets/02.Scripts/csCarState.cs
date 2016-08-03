@@ -329,34 +329,38 @@ public class csCarState : MonoBehaviour
 
             case CARSTATE.RECOVERY:
 
-                tracker.target = tracker.orignal_target;
-                ai.m_Target = tracker.orignal_target;
-
-                if (carState != CARSTATE.BIG_JUMP || carState != CARSTATE.BIG_JUMP_READY)
+                if (carState != CARSTATE.READY)
                 {
-                    if (boolRecovery)
-                    {
-                        boolRecovery = false;
-                        //reverseTime = 0;
+                    tracker.target = tracker.orignal_target;
+                    ai.m_Target = tracker.orignal_target;
 
-                        if (carState != CARSTATE.BIG_JUMP)
+                    if (carState != CARSTATE.BIG_JUMP || carState != CARSTATE.BIG_JUMP_READY)
+                    {
+                        if (boolRecovery)
                         {
-                            StartCoroutine(BlinkEffect());
-                        }
-                        else if (carState != CARSTATE.BIG_JUMP_READY)
-                        {
-                            StartCoroutine(BlinkEffect());
+                            boolRecovery = false;
+                            //reverseTime = 0;
+
+                            if (carState != CARSTATE.BIG_JUMP)
+                            {
+                                StartCoroutine(BlinkEffect());
+                            }
+                            else if (carState != CARSTATE.BIG_JUMP_READY)
+                            {
+                                StartCoroutine(BlinkEffect());
+                            }
                         }
                     }
+                    else if (carState == CARSTATE.BIG_JUMP)
+                    {
+                        carState = CARSTATE.BIG_JUMP;
+                    }
+                    else if (carState == CARSTATE.BIG_JUMP_READY)
+                    {
+                        carState = CARSTATE.BIG_JUMP_READY;
+                    }
                 }
-                else if (carState == CARSTATE.BIG_JUMP)
-                {
-                    carState = CARSTATE.BIG_JUMP;
-                }
-                else if (carState == CARSTATE.BIG_JUMP_READY)
-                {
-                    carState = CARSTATE.BIG_JUMP_READY;
-                }
+
                 break;
 
             case CARSTATE.STUN:
@@ -520,6 +524,9 @@ public class csCarState : MonoBehaviour
 
     IEnumerator ToBlink()
     {
+        tracker.target = tracker.orignal_target;
+        ai.m_Target = tracker.orignal_target;
+
         yield return new WaitForSeconds(1.5f);
 
         if (carState != CARSTATE.BIG_JUMP)
@@ -534,6 +541,9 @@ public class csCarState : MonoBehaviour
 
     public IEnumerator BlinkEffect()
     {
+        tracker.target = tracker.orignal_target;
+        ai.m_Target = tracker.orignal_target;
+
         if (carState != CARSTATE.BIG_JUMP)
         {
             if (Recovery_Fix == true)

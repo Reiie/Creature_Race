@@ -11,7 +11,7 @@ public class csRanking : MonoBehaviour
 	public GameObject Player3;
 	public GameObject Player4;
 
-	csCarState P1_Car_State;
+    csCarState P1_Car_State;
 	csCarState P2_Car_State;
 	csCarState P3_Car_State;
 	csCarState P4_Car_State;
