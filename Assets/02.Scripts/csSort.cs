@@ -130,7 +130,7 @@ public class csSort : MonoBehaviour {
     // 등급으로 정렬
     public void RankSortDesc()
     {
-        Debug.Log("타입 내림차순");
+        Debug.Log("등급 내림차순");
         //마지막 아이템있는 인덱스 찾기
         int lastIndex = inven.MySlots.Count - 1;
         for (int i = inven.MySlots.Count - 1; i >= 0; i--)
@@ -184,7 +184,7 @@ public class csSort : MonoBehaviour {
 
     public void RankSortAsc()
     {
-        Debug.Log("타입 내림차순");
+        Debug.Log("등급 내림차순");
         //마지막 아이템있는 인덱스 찾기
         int lastIndex = inven.MySlots.Count - 1;
         for (int i = inven.MySlots.Count - 1; i >= 0; i--)

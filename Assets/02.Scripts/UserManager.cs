@@ -29,6 +29,7 @@ public class UserManager : MonoBehaviour {
     public UISprite rewardIcon;
     public UILabel rewardAmount;
     public UILabel rewardGold;
+    public UILabel nextRaceLabel;
     public GameObject ingLabel;
 
     public int raceReward = 0;
@@ -167,7 +168,7 @@ public class UserManager : MonoBehaviour {
         creatureLabel.text = name;
         invenLabel.text = name;
         inputLabel.text = name;
-    //   prefsInit();
+      // prefsInit();
         DateLabelUpdate();
         StartCoroutine(Init());
     }
@@ -1031,9 +1032,39 @@ public class UserManager : MonoBehaviour {
         nowDayLabel.text = strDate.Substring(8, 2);
 
         goldLabel.text = myGold.ToString();
+       // nextRaceDay();
         userInfoSave();
     }
-
+    /*
+    public void nextRaceDay()
+    {
+        csWork.Work tmpWork;
+        Debug.Log("넥스트");
+        for (int i = 0; i < 6; i++)
+        {
+            if (nowDate.Year == 2040)
+            {
+                tmpWork = c_manager.MyMonths[nowDate.Month - 1].MyDays[nowDate.Day - 1 + c_manager.MyMonths[nowDate.Month - 1].startIndex + i].myWork;
+                Debug.Log("11");
+                if (tmpWork == csWork.Work.Race)
+                {
+                    nextRaceLabel.text  = c_manager.MyMonths[nowDate.Month - 1].MyDays[nowDate.Day - 1 + c_manager.MyMonths[nowDate.Month - 1].startIndex + i].dt.Day.ToString();
+                    Debug.Log("찾음");
+                    break;
+                }
+            }
+            else
+            {
+                tmpWork = c_manager.MyMonths[nowDate.Month - 1 + 12].MyDays[nowDate.Day - 1 + c_manager.MyMonths[nowDate.Month - 1 + 12].startIndex + i].myWork;
+                if (tmpWork == csWork.Work.Race)
+                {
+                    nextRaceLabel.text = c_manager.MyMonths[nowDate.Month - 1 + 12].MyDays[nowDate.Day - 1 + c_manager.MyMonths[nowDate.Month - 1 + 12].startIndex + i].dt.Day.ToString();
+                    break;
+                }
+            }
+        }
+    }
+    */
     public void WorkUpdate()
     {
         Debug.Log("워크업데이트");
