@@ -1051,7 +1051,7 @@ public class csGameFINISH : MonoBehaviour
 
         UserManager.Instance().raceUpdate();
       //  UserManager.Instance().first = true;
-        UserManager.Instance().nowDate = UserManager.Instance().nowDate.AddDays(1);
+        //UserManager.Instance().nowDate = UserManager.Instance().nowDate.AddDays(1);
        // int tmp = PlayerPrefs.GetInt("ProgressCount");
         PlayerPrefs.SetInt("ProgressCount", 0);
         UserManager.Instance().userInfoSave();

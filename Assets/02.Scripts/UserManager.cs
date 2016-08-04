@@ -142,7 +142,6 @@ public class UserManager : MonoBehaviour {
               day = PlayerPrefs.GetInt("Day");
               progressCount =  PlayerPrefs.GetInt("ProgressCount");
               nowDate = new DateTime(year, month, day);
-              Debug.Log("111");
           }
 
           if (isLoginOnce == "True")
@@ -160,7 +159,7 @@ public class UserManager : MonoBehaviour {
         creatureLabel.text = name;
         invenLabel.text = name;
         inputLabel.text = name;
-      // prefsInit();
+   //    prefsInit();
         DateLabelUpdate();
         StartCoroutine(Init());
     }
@@ -199,7 +198,9 @@ public class UserManager : MonoBehaviour {
          myGold += raceReward;
          Debug.Log("내골드" + raceReward);
          raceReward = 0;
-         DateLabelUpdate();
+         goldLabel.text = myGold.ToString();
+
+         userInfoSave();
     }
 
     public void continueWork()
@@ -234,7 +235,7 @@ public class UserManager : MonoBehaviour {
                 bool isreward = false;
                 if (nowDate.Year == 2040)
                 {
-                    if(c_manager.MyMonths[nowDate.Month - 1].MyDays[nowDate.Day - 1 + c_manager.MyMonths[nowDate.Month - 1].startIndex].isLastWork == 1)
+                    if(c_manager.MyMonths[nowDate.Month - 1].MyDays[nowDate.Day - 2 + c_manager.MyMonths[nowDate.Month - 1].startIndex].isLastWork == 1)
                     {
                         isreward = true;
                         StartCoroutine(reward());
@@ -244,7 +245,7 @@ public class UserManager : MonoBehaviour {
                 //41년
                 else
                 {
-                    if(c_manager.MyMonths[nowDate.Month - 1 + 12].MyDays[nowDate.Day - 1 + c_manager.MyMonths[nowDate.Month - 1 + 12].startIndex].isLastWork == 1)
+                    if(c_manager.MyMonths[nowDate.Month - 1 + 12].MyDays[nowDate.Day - 2 + c_manager.MyMonths[nowDate.Month - 1 + 12].startIndex].isLastWork == 1)
                     {
                         isreward = true;
                         StartCoroutine(reward());
@@ -984,6 +985,7 @@ public class UserManager : MonoBehaviour {
     {
         // 오늘날짜로 업데이트 - 소지골지도 업데이트
         DateLabelUpdate();
+        Debug.Log("넥스트데이");
         WorkUpdate();
         TouchSreen.SetActive(false);
         WorkEnd.SetActive(false);
@@ -1004,7 +1006,7 @@ public class UserManager : MonoBehaviour {
         goldLabel.text = myGold.ToString();
        
         userInfoSave();
-       // StartCoroutine(nextRaceDay());
+        StartCoroutine(nextRaceDay());
     }
 
     
@@ -1256,7 +1258,7 @@ public class UserManager : MonoBehaviour {
             nowWork = c_manager.MyMonths[nowDate.Month - 1].MyDays[nowDate.Day - 2 + c_manager.MyMonths[nowDate.Month - 1].startIndex].myWork;
 
             Debug.Log("오늘작업 : "+nowWork);
-                 if (nowDate.Year == 2040 && nowDate.Month == 1 && nowDate.Day == 1)
+                  if (nowDate.Year == 2040 && nowDate.Month == 1 && nowDate.Day == 2)
                   {
                       yesterDayWork = csWork.Work.Nowork;
                   }
