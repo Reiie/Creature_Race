@@ -106,7 +106,6 @@ public class csMonth : MonoBehaviour {
         DateTime tmpday = new DateTime(2041, 12, 1);
         if (dt == tmpday)
         {
-            Debug.Log("마지막날왓냐");
             CalenderManager.space = 0;
         }
         m_Grid.Reposition();
