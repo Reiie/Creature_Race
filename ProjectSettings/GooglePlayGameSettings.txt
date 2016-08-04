@@ -1,10 +1,10 @@
 lastUpgrade=00934
 proj.pluginVersion=0.9.34
-proj.AppId=211566927121
-and.BundleId=com.Reie.googleplay
+proj.AppId=245414382453
+and.BundleId=com.im.prove
 proj.classDir=Assets
 proj.ConstantsClassName=GPGSIDs
-and.ResourceData=%3c%3fxml+version%3d%221.0%22+encoding%3d%22utf-8%22%3f%3e%0d%0a%3c%21--%0d%0aGoogle+Play+game+services+IDs.%0d%0aSave+this+file+as+res%2fvalues%2fgames-ids.xml+in+your+project.%0d%0a--%3e%0d%0a%3cresources%3e%0d%0a++%3cstring+name%3d%22app_id%22%3e211566927121%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22package_name%22%3ecom.Reie.googleplay%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_disposable_achievement%22%3eCgkIkbr8kpQGEAIQAQ%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_level_achievement%22%3eCgkIkbr8kpQGEAIQAg%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22leaderboard_top_score%22%3eCgkIkbr8kpQGEAIQAw%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22leaderboard_elapse_time%22%3eCgkIkbr8kpQGEAIQBA%3c%2fstring%3e%0d%0a%3c%2fresources%3e%0d%0a
+and.ResourceData=%3c%3fxml+version%3d%221.0%22+encoding%3d%22utf-8%22%3f%3e%0d%0a%3c%21--%0d%0aGoogle+Play+game+services+IDs.%0d%0aSave+this+file+as+res%2fvalues%2fgames-ids.xml+in+your+project.%0d%0a--%3e%0d%0a%3cresources%3e%0d%0a++%3cstring+name%3d%22app_id%22%3e245414382453%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22package_name%22%3ecom.im.prove%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_game_start%22%3eCgkI9ZbZnpIHEAIQAQ%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_store_random_box_purchase%22%3eCgkI9ZbZnpIHEAIQAg%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_store_random_box_sell%22%3eCgkI9ZbZnpIHEAIQAw%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_first_schedule_start%22%3eCgkI9ZbZnpIHEAIQBA%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_racing_first_victory%22%3eCgkI9ZbZnpIHEAIQBQ%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22leaderboard_racing_complete_time%22%3eCgkI9ZbZnpIHEAIQBg%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22leaderboard_possession_money%22%3eCgkI9ZbZnpIHEAIQBw%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22leaderboard_victory_num%22%3eCgkI9ZbZnpIHEAIQCA%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22leaderboard_possession_part_amount%22%3eCgkI9ZbZnpIHEAIQCQ%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22leaderboard_mix_amount%22%3eCgkI9ZbZnpIHEAIQCg%3c%2fstring%3e%0d%0a%3c%2fresources%3e%0a
 and.ClientId=
 proj.requireGPlus=false
 android.SetupDone=true
