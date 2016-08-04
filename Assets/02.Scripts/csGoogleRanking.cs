@@ -4,7 +4,7 @@ using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 using GooglePlayGames;
 
-public class csShowLeaderBorad : MonoBehaviour
+public class csGoogleRanking : MonoBehaviour
 {
     void Start()
     {
@@ -15,4 +15,10 @@ public class csShowLeaderBorad : MonoBehaviour
     {
         Social.ShowLeaderboardUI();
     }
+
+    public void ShowAchievement()
+    {
+        Social.ShowAchievementsUI();
+    }
 }
+

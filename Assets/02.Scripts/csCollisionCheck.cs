@@ -146,7 +146,16 @@ public class csCollisionCheck : MonoBehaviour
 
         if (other.tag == "Force_Fixer1")
         {
-            JUMPER_POWER = 13000;
+            JUMPER_POWER = 14000;
+
+            Z = 1000;
+        }
+
+        if (other.tag == "Force_Fixer2")
+        {
+            JUMPER_POWER = 20000;
+
+            Z = 1000;
         }
 
         if (other.tag == "Stage2_Over")
@@ -254,7 +263,8 @@ public class csCollisionCheck : MonoBehaviour
         if (other.tag == "Small_Jump_Area")
         {
 			car_state.carState = csCarState.CARSTATE.SMALL_JUMP;
-            JUMPER_POWER = 13000;
+            car_state.respawn = tracker.orignal_target;
+            JUMPER_POWER = 10000;
             GetComponent<Rigidbody>().AddForce(transform.TransformVector(0.0f, 5.0f, 2.5f) * 1.0f);
             
         }
@@ -439,13 +449,13 @@ public class csCollisionCheck : MonoBehaviour
 
                     CODEFIXER = false;
 
-                    Y = 500.0f;///1000
-                    Z = 1000.0f;///4600
+                    Y = 200.0f;///1000
+                    Z = 1200.0f;///4600
 
                     ai.m_Target = other.gameObject.transform.FindChild("Point1").GetComponent<Transform>();
                     tracker.target = other.gameObject.transform.FindChild("Point1").GetComponent<Transform>();
                     tracker.isHurdle = true;
-                    //car_state.respawn = ai.m_Target;
+                    car_state.respawn = other.gameObject.transform.FindChild("Point1").GetComponent<Transform>();
                     //car_state.respawn = tracker.orignal_target;
                     StartCoroutine(CODEFIXER_TRIGGER());
                 }
@@ -471,11 +481,12 @@ public class csCollisionCheck : MonoBehaviour
 
                     CODEFIXER = false;
 
-                    Y = 300.0f;///1000
-                    Z = 1200.0f;///4600
+                    Y = 100.0f;///1000
+                    Z = 800.0f;///4600
 
                     ai.m_Target = other.gameObject.transform.FindChild("Point1").GetComponent<Transform>();
                     tracker.target = other.gameObject.transform.FindChild("Point1").GetComponent<Transform>();
+                    car_state.respawn = other.gameObject.transform.FindChild("Point1").GetComponent<Transform>();
                     tracker.isHurdle = true;
                     //car_state.respawn = ai.m_Target;
                     //car_state.respawn = tracker.orignal_target;
@@ -506,6 +517,7 @@ public class csCollisionCheck : MonoBehaviour
                     Y = 400.0f;///1000
                     Z = 1200.0f;///4600
 
+                    car_state.respawn = other.gameObject.transform.FindChild("Point1").GetComponent<Transform>();
                     ai.m_Target = other.gameObject.transform.FindChild("Point1").GetComponent<Transform>();
                     tracker.target = other.gameObject.transform.FindChild("Point1").GetComponent<Transform>();
                     tracker.isHurdle = true;

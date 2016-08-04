@@ -159,7 +159,7 @@ public class UserManager : MonoBehaviour {
         creatureLabel.text = name;
         invenLabel.text = name;
         inputLabel.text = name;
-   //    prefsInit();
+      // prefsInit();
         DateLabelUpdate();
         StartCoroutine(Init());
     }
