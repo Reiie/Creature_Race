@@ -24,10 +24,16 @@
 
 public static class GPGSIDs
 {
-        public const string leaderboard_elapse_time = "CgkIkbr8kpQGEAIQBA"; // <GPGSID>
-        public const string achievement_disposable_achievement = "CgkIkbr8kpQGEAIQAQ"; // <GPGSID>
-        public const string achievement_level_achievement = "CgkIkbr8kpQGEAIQAg"; // <GPGSID>
-        public const string leaderboard_top_score = "CgkIkbr8kpQGEAIQAw"; // <GPGSID>
+        public const string achievement_racing_first_victory = "CgkI9ZbZnpIHEAIQBQ"; // <GPGSID>
+        public const string leaderboard_victory_num = "CgkI9ZbZnpIHEAIQCA"; // <GPGSID>
+        public const string leaderboard_racing_complete_time = "CgkI9ZbZnpIHEAIQBg"; // <GPGSID>
+        public const string leaderboard_mix_amount = "CgkI9ZbZnpIHEAIQCg"; // <GPGSID>
+        public const string achievement_first_schedule_start = "CgkI9ZbZnpIHEAIQBA"; // <GPGSID>
+        public const string leaderboard_possession_part_amount = "CgkI9ZbZnpIHEAIQCQ"; // <GPGSID>
+        public const string achievement_store_random_box_sell = "CgkI9ZbZnpIHEAIQAw"; // <GPGSID>
+        public const string leaderboard_possession_money = "CgkI9ZbZnpIHEAIQBw"; // <GPGSID>
+        public const string achievement_game_start = "CgkI9ZbZnpIHEAIQAQ"; // <GPGSID>
+        public const string achievement_store_random_box_purchase = "CgkI9ZbZnpIHEAIQAg"; // <GPGSID>
 
 }
 

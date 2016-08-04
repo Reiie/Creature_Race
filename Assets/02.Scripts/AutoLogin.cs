@@ -21,10 +21,10 @@ using UnityEngine.SocialPlatforms;
 public class AutoLogin : MonoBehaviour
 {
     private bool bWatingForAuth = false;
-    //private string mStatusText = "Ready.";
+    private string mStatusText = "";
 
-    //Rect labelRect = new Rect(20, 20, Screen.width, Screen.height * 0.25f);
-    //Rect imageRect = new Rect(Screen.width / 2f - 200f, Screen.height / 2f - 200f, 400f, 400f);
+    Rect labelRect = new Rect(20, 20, Screen.width, Screen.height * 0.25f);
+    Rect imageRect = new Rect(Screen.width / 2f - 200f, Screen.height / 2f - 200f, 400f, 400f);
 
 
     void Start()
@@ -57,23 +57,23 @@ public class AutoLogin : MonoBehaviour
                 }
                 else
                 {
-                    //mStatusText = "Authentication failed";
+                    mStatusText = "Authentication failed";
                 }
             });
         }
     }
 
-    //void OnGUI()
-    //{
-    //    GUI.skin.label.fontSize = (int)(0.05 * Screen.height);
-    //    GUI.Label(labelRect, mStatusText);
+    void OnGUI()
+    {
+        GUI.skin.label.fontSize = (int)(0.05 * Screen.height);
+        GUI.Label(labelRect, mStatusText);
 
-    //    if (Social.localUser.authenticated)
-    //    {
-    //        if (Social.localUser.image != null)
-    //        {
-    //            GUI.DrawTexture(imageRect, Social.localUser.image, ScaleMode.ScaleToFit);
-    //        }
-    //    }
-    //}
+        if (Social.localUser.authenticated)
+        {
+            if (Social.localUser.image != null)
+            {
+                //GUI.DrawTexture(imageRect, Social.localUser.image, ScaleMode.ScaleToFit);
+            }
+        }
+    }
 }
