@@ -39,10 +39,10 @@ public class csScene : MonoBehaviour {
 
         UserManager.Instance().continueWork();
 
-
+        /*
         if (UserManager.Instance().first == true)
         {
             UserManager.Instance().CreatureFalse();
-        }
+        }*/
     }
 }

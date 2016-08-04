@@ -25,7 +25,7 @@ public class UserManager : MonoBehaviour {
         Cheonho
     }
 
-    public bool first = false;
+  //  public bool first = false;
     public UISprite rewardIcon;
     public UILabel rewardAmount;
     public UILabel rewardGold;
@@ -100,9 +100,6 @@ public class UserManager : MonoBehaviour {
     int RepairDay = 1;
     int RestDay = 1;
 
-
-
-
     //현재 하고있는 작업의 총 소요일수
     int nowWorkDay = 0;
 
@@ -119,7 +116,6 @@ public class UserManager : MonoBehaviour {
         if (_instance == null)
             _instance = this;
 
-        Debug.Log("ㅋㅋㅋ");
         string isLoginOnce = PlayerPrefs.GetString("_isLoginOnce");
 
         int year = 0;
@@ -159,12 +155,8 @@ public class UserManager : MonoBehaviour {
               day = PlayerPrefs.GetInt("Day");
               nowDate = new DateTime(year, month, day);
               progressCount = PlayerPrefs.GetInt("ProgressCount");
-              Debug.Log("222");
           }
-        //   myGold = 5000;
-        //   stamina = 40;
-        //  name = "우리팀 크리쳐";     
-        
+     
         creatureLabel.text = name;
         invenLabel.text = name;
         inputLabel.text = name;
@@ -174,15 +166,13 @@ public class UserManager : MonoBehaviour {
     }
 
     public void userInfoSave()
-    {
-        
+    {      
         PlayerPrefs.SetString("Name", name);
         PlayerPrefs.SetInt("Stamina", stamina);
         PlayerPrefs.SetInt("MyGold", myGold);
         PlayerPrefs.SetInt("Year", nowDate.Year);
         PlayerPrefs.SetInt("Month", nowDate.Month);
         PlayerPrefs.SetInt("Day", nowDate.Day);
-
     }
 
 
@@ -220,31 +210,13 @@ public class UserManager : MonoBehaviour {
             CreatureFalse();
             Debug.Log("레이스 끝난후 일정 다시22");
             Debug.Log(nowDate);
-           // nowDate = nowDate.AddDays(1);
+           
             Debug.Log(nowDate);
             userInfoSave();
-            WorkUpdate();
-         //   PersentageUpdate();
             Progress();
         }
-        
-        //  StartCoroutine(WorkReStart());
-
     }
 
- /*   IEnumerator WorkReStart()
-    {
-        yield return new WaitForEndOfFrame();
-        Debug.Log("코루틴워크 불렸다");
-        if (PlayerPrefs.GetInt("ProgressCount") != 0)
-        {
-            Debug.Log("레이스 끝난후 일정 다시22");
-            nowDate = nowDate.AddDays(1);
-            userInfoSave();
-            Progress();
-        }
-
-    }*/
     void Update () {
 
         if (isRise)
@@ -253,7 +225,6 @@ public class UserManager : MonoBehaviour {
             workSlider.value =  Mathf.Lerp(startValue, endValue, riseTime);
             if (workSlider.value > endValue - 0.01)
             {
-                Debug.Log("다참");
                 workSlider.value = endValue;
                 isRise = false;
                 riseTime = 0;
@@ -294,7 +265,7 @@ public class UserManager : MonoBehaviour {
             yield break;
 
         rewardPay();
-        DateLabelUpdate();
+        
         yield return new WaitForSeconds(1.0f);
         workSlider.value = 0;
         WorkCount = 0;
@@ -974,7 +945,6 @@ public class UserManager : MonoBehaviour {
                 }
                 break;
             case csWork.Work.Rest:
-
                 break;
         }
     }
@@ -1003,18 +973,18 @@ public class UserManager : MonoBehaviour {
         WorkRateObj.SetActive(false);
     }
 
-
     // 아무키나 눌러주세요 안보이는 버튼 트루
     IEnumerator DayEnd()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.0f);
         Debug.Log("데이엔드");
-        TouchSreen.SetActive(true);
-        nowDate = nowDate.AddDays(1);
-        userInfoSave();
+        TouchSreen.SetActive(true);        
     }
     public void NextDay()
     {
+        // 오늘날짜로 업데이트 - 소지골지도 업데이트
+        DateLabelUpdate();
+        WorkUpdate();
         TouchSreen.SetActive(false);
         WorkEnd.SetActive(false);
         ingLabel.SetActive(true);
@@ -1032,20 +1002,29 @@ public class UserManager : MonoBehaviour {
         nowDayLabel.text = strDate.Substring(8, 2);
 
         goldLabel.text = myGold.ToString();
-       // nextRaceDay();
+       
         userInfoSave();
+       // StartCoroutine(nextRaceDay());
     }
-    /*
-    public void nextRaceDay()
+
+    
+    
+    IEnumerator nextRaceDay()
     {
+        yield return new WaitForSeconds(0.2f);
         csWork.Work tmpWork;
-        Debug.Log("넥스트");
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 7; i++)
         {
             if (nowDate.Year == 2040)
             {
-                tmpWork = c_manager.MyMonths[nowDate.Month - 1].MyDays[nowDate.Day - 1 + c_manager.MyMonths[nowDate.Month - 1].startIndex + i].myWork;
-                Debug.Log("11");
+                if ((nowDate.Day - 1 + c_manager.MyMonths[nowDate.Month - 1].startIndex + i) < 42)
+                {
+                    tmpWork = c_manager.MyMonths[nowDate.Month - 1].MyDays[nowDate.Day - 1 + c_manager.MyMonths[nowDate.Month - 1].startIndex + i].myWork;
+                }
+                else
+                {
+                    tmpWork = c_manager.MyMonths[nowDate.Month].MyDays[nowDate.Day - 1 + c_manager.MyMonths[nowDate.Month].startIndex + i].myWork;
+                }
                 if (tmpWork == csWork.Work.Race)
                 {
                     nextRaceLabel.text  = c_manager.MyMonths[nowDate.Month - 1].MyDays[nowDate.Day - 1 + c_manager.MyMonths[nowDate.Month - 1].startIndex + i].dt.Day.ToString();
@@ -1055,7 +1034,16 @@ public class UserManager : MonoBehaviour {
             }
             else
             {
-                tmpWork = c_manager.MyMonths[nowDate.Month - 1 + 12].MyDays[nowDate.Day - 1 + c_manager.MyMonths[nowDate.Month - 1 + 12].startIndex + i].myWork;
+                
+                if (nowDate.Day - 1 + c_manager.MyMonths[nowDate.Month - 1 + 12].startIndex + i < 42)
+                {
+                    tmpWork = c_manager.MyMonths[nowDate.Month - 1 + 12].MyDays[nowDate.Day - 1 + c_manager.MyMonths[nowDate.Month - 1 + 12].startIndex + i].myWork;
+                }
+                else
+                {
+                    tmpWork = c_manager.MyMonths[nowDate.Month + 12].MyDays[nowDate.Day - 1 + c_manager.MyMonths[nowDate.Month + 12].startIndex + i].myWork;
+                }
+
                 if (tmpWork == csWork.Work.Race)
                 {
                     nextRaceLabel.text = c_manager.MyMonths[nowDate.Month - 1 + 12].MyDays[nowDate.Day - 1 + c_manager.MyMonths[nowDate.Month - 1 + 12].startIndex + i].dt.Day.ToString();
@@ -1064,10 +1052,9 @@ public class UserManager : MonoBehaviour {
             }
         }
     }
-    */
+    
     public void WorkUpdate()
     {
-        Debug.Log("워크업데이트");
         csWork.Work yesterWork;
         csWork.Work tomorrowWork;
 
@@ -1240,12 +1227,14 @@ public class UserManager : MonoBehaviour {
         {
             int tmp = PlayerPrefs.GetInt("ProgressCount");
             PlayerPrefs.SetInt("ProgressCount", tmp + 1);
-            
+            nowDate = nowDate.AddDays(1);
+            userInfoSave();
+
 
             possibleProgress.GetComponent<TweenPosition>().Toggle();
             possibleProgress.GetComponent<TweenAlpha>().Toggle();
             StartCoroutine(co_Progress());
-            
+          
         }
         //일주일 일정 완료
         else
@@ -1264,23 +1253,24 @@ public class UserManager : MonoBehaviour {
 
         if (nowDate.Year == 2040)
         {
-            nowWork = c_manager.MyMonths[nowDate.Month - 1].MyDays[nowDate.Day - 1 + c_manager.MyMonths[nowDate.Month - 1].startIndex].myWork;
+            nowWork = c_manager.MyMonths[nowDate.Month - 1].MyDays[nowDate.Day - 2 + c_manager.MyMonths[nowDate.Month - 1].startIndex].myWork;
 
+            Debug.Log("오늘작업 : "+nowWork);
                  if (nowDate.Year == 2040 && nowDate.Month == 1 && nowDate.Day == 1)
                   {
                       yesterDayWork = csWork.Work.Nowork;
                   }
                   else
                   {
-                      yesterDayWork = c_manager.MyMonths[nowDate.Month - 1].MyDays[nowDate.Day - 2 + c_manager.MyMonths[nowDate.Month - 1].startIndex].myWork;
+                      yesterDayWork = c_manager.MyMonths[nowDate.Month - 1].MyDays[nowDate.Day - 3 + c_manager.MyMonths[nowDate.Month - 1].startIndex].myWork;
                   }
                   
         }
         //41년
         else
         {
-            nowWork = c_manager.MyMonths[nowDate.Month - 1 + 12].MyDays[nowDate.Day - 1 + c_manager.MyMonths[nowDate.Month - 1 + 12].startIndex].myWork;
-                 yesterDayWork = c_manager.MyMonths[nowDate.Month - 1 + 12].MyDays[nowDate.Day - 2 + c_manager.MyMonths[nowDate.Month - 1 + 12].startIndex].myWork;
+            nowWork = c_manager.MyMonths[nowDate.Month - 1 + 12].MyDays[nowDate.Day - 2 + c_manager.MyMonths[nowDate.Month - 1 + 12].startIndex].myWork;
+                 yesterDayWork = c_manager.MyMonths[nowDate.Month - 1 + 12].MyDays[nowDate.Day - 3 + c_manager.MyMonths[nowDate.Month - 1 + 12].startIndex].myWork;
         }
 
         Debug.Log("어제일"+yesterDayWork);
@@ -1400,10 +1390,7 @@ public class UserManager : MonoBehaviour {
         // 현재 스태미나 갱신
         s_manager.checkStamina();
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //어제 오늘 할일 업데이트 
-        WorkUpdate();
-        // 오늘날짜로 업데이트 - 소지골지도 업데이트
-        DateLabelUpdate();
+        //어제 오늘 할일 업데();
     }
 
     public void NameChange()
@@ -1426,6 +1413,7 @@ public class UserManager : MonoBehaviour {
         if (nowDate.Year == 2040)
         {
             nowWork = c_manager.MyMonths[nowDate.Month - 1].MyDays[nowDate.Day - 1 + c_manager.MyMonths[nowDate.Month - 1].startIndex].myWork;
+            Debug.Log("퍼센티지 오늘작업 : " + nowWork);
         }
         else
         {
@@ -1594,6 +1582,6 @@ public class UserManager : MonoBehaviour {
 
     public void RaceStart()
     {
-        SceneManager.LoadScene("4. Ui_To_Stage1");
+         SceneManager.LoadScene("4. Ui_To_Stage1");
     }
 }
