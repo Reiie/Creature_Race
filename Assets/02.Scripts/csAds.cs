@@ -38,7 +38,8 @@ public class csAds : MonoBehaviour
         switch (result)
         {
             case ShowResult.Finished:
-
+                UserManager.Instance().AdsSkip();
+                Debug.Log("광고끝");
                 break;
 
             case ShowResult.Skipped:

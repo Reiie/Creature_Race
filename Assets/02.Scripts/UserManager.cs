@@ -159,7 +159,11 @@ public class UserManager : MonoBehaviour {
         creatureLabel.text = name;
         invenLabel.text = name;
         inputLabel.text = name;
+<<<<<<< HEAD
       // prefsInit();
+=======
+    //    prefsInit();
+>>>>>>> 79f8530d39c83fa73d4831f792c938e74f533d10
         DateLabelUpdate();
         StartCoroutine(Init());
     }
@@ -986,8 +990,7 @@ public class UserManager : MonoBehaviour {
         // 오늘날짜로 업데이트 - 소지골지도 업데이트
         DateLabelUpdate();
         Debug.Log("넥스트데이");
-        WorkUpdate();
-        TouchSreen.SetActive(false);
+        WorkUpdate();        TouchSreen.SetActive(false);
         WorkEnd.SetActive(false);
         ingLabel.SetActive(true);
         rewardGold.text = "0";
@@ -1235,8 +1238,7 @@ public class UserManager : MonoBehaviour {
 
             possibleProgress.GetComponent<TweenPosition>().Toggle();
             possibleProgress.GetComponent<TweenAlpha>().Toggle();
-            StartCoroutine(co_Progress());
-          
+            StartCoroutine(co_Progress());     
         }
         //일주일 일정 완료
         else
@@ -1249,33 +1251,36 @@ public class UserManager : MonoBehaviour {
 
     public IEnumerator co_Progress()
     {
-
         yield return new WaitForSeconds(1.0f);
+        Working();
+    }
+    
 
-
+    public void Working()
+    {
         if (nowDate.Year == 2040)
         {
             nowWork = c_manager.MyMonths[nowDate.Month - 1].MyDays[nowDate.Day - 2 + c_manager.MyMonths[nowDate.Month - 1].startIndex].myWork;
 
-            Debug.Log("오늘작업 : "+nowWork);
-                  if (nowDate.Year == 2040 && nowDate.Month == 1 && nowDate.Day == 2)
-                  {
-                      yesterDayWork = csWork.Work.Nowork;
-                  }
-                  else
-                  {
-                      yesterDayWork = c_manager.MyMonths[nowDate.Month - 1].MyDays[nowDate.Day - 3 + c_manager.MyMonths[nowDate.Month - 1].startIndex].myWork;
-                  }
-                  
+            Debug.Log("오늘작업 : " + nowWork);
+            if (nowDate.Year == 2040 && nowDate.Month == 1 && nowDate.Day == 2)
+            {
+                yesterDayWork = csWork.Work.Nowork;
+            }
+            else
+            {
+                yesterDayWork = c_manager.MyMonths[nowDate.Month - 1].MyDays[nowDate.Day - 3 + c_manager.MyMonths[nowDate.Month - 1].startIndex].myWork;
+            }
+
         }
         //41년
         else
         {
             nowWork = c_manager.MyMonths[nowDate.Month - 1 + 12].MyDays[nowDate.Day - 2 + c_manager.MyMonths[nowDate.Month - 1 + 12].startIndex].myWork;
-                 yesterDayWork = c_manager.MyMonths[nowDate.Month - 1 + 12].MyDays[nowDate.Day - 3 + c_manager.MyMonths[nowDate.Month - 1 + 12].startIndex].myWork;
+            yesterDayWork = c_manager.MyMonths[nowDate.Month - 1 + 12].MyDays[nowDate.Day - 3 + c_manager.MyMonths[nowDate.Month - 1 + 12].startIndex].myWork;
         }
 
-        Debug.Log("어제일"+yesterDayWork);
+        Debug.Log("어제일" + yesterDayWork);
         Debug.Log("오늘일" + nowWork);
         // 어제일과 오늘일이 다르면
         WorkCheck();
@@ -1290,7 +1295,7 @@ public class UserManager : MonoBehaviour {
             //maxLabel.text = nowWorkDay.ToString();
             WorkCount = 0;
         }
-       
+
         // 오늘할일 실행
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         switch (nowWork)
@@ -1391,9 +1396,8 @@ public class UserManager : MonoBehaviour {
         maxLabel.text = nowWorkDay.ToString();
         // 현재 스태미나 갱신
         s_manager.checkStamina();
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //어제 오늘 할일 업데();
     }
+
 
     public void NameChange()
     {
@@ -1411,7 +1415,8 @@ public class UserManager : MonoBehaviour {
 
     // 시작하면 현재작업과 진행율 로드
     public void PersentageUpdate()
-    {       
+    {
+        Debug.Log("워크프로세스" + PlayerPrefs.GetInt("ProgressCount"));
         if (nowDate.Year == 2040)
         {
             nowWork = c_manager.MyMonths[nowDate.Month - 1].MyDays[nowDate.Day - 1 + c_manager.MyMonths[nowDate.Month - 1].startIndex].myWork;
@@ -1585,5 +1590,44 @@ public class UserManager : MonoBehaviour {
     public void RaceStart()
     {
          SceneManager.LoadScene("4. Ui_To_Stage1");
+    }
+
+    public void AdsSkip()
+    {
+        for(int i = 0; i< 5;i++)
+        {
+            nowDate = nowDate.AddDays(1);
+            int tmp = PlayerPrefs.GetInt("ProgressCount");
+            PlayerPrefs.SetInt("ProgressCount", tmp + 1);
+            userInfoSave();
+            Working();
+
+            if (nowDate.Year == 2040)
+            {
+                if (c_manager.MyMonths[nowDate.Month - 1].MyDays[nowDate.Day - 2 + c_manager.MyMonths[nowDate.Month - 1].startIndex].isLastWork == 1)
+                {
+                    rewardPay();
+                    Debug.Log("보상얻음ㅎㅎ");
+                    workSlider.value = 0;
+                    WorkCount = 0;
+                }
+            }
+            //41년
+            else
+            {
+                if (c_manager.MyMonths[nowDate.Month - 1 + 12].MyDays[nowDate.Day - 2 + c_manager.MyMonths[nowDate.Month - 1 + 12].startIndex].isLastWork == 1)
+                {
+                    rewardPay();
+                    workSlider.value = 0;
+                    WorkCount = 0;
+                }
+            }
+        }
+        int tmp2 = PlayerPrefs.GetInt("ProgressCount");
+        PlayerPrefs.SetInt("ProgressCount", tmp2 + 1);
+        nowDate = nowDate.AddDays(1);
+        DateLabelUpdate();
+        WorkUpdate();
+        Progress();
     }
 }
