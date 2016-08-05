@@ -2,6 +2,8 @@
 using System.Collections;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms;
+using GooglePlayGames;
 
 
 public class UserManager : MonoBehaviour {
@@ -190,10 +192,31 @@ public class UserManager : MonoBehaviour {
         PlayerPrefs.SetInt("Day", 1);
         PlayerPrefs.SetInt("ProgressCount", 0);
     }
-    void Start () {
-                
+    void Start ()
+    {
+        GooglePlayGames.PlayGamesPlatform.Activate();
     }
-	// Update is called once per frame
+
+    public void Money_LeaderBoard()
+    {
+        string leader_board_id = "CgkI9ZbZnpIHEAIQBw";
+#if UNITY_ANDROID
+        leader_board_id = "CgkI9ZbZnpIHEAIQBw";
+#elif UNITY_IPHONE
+        leader_board_id = "SOCIALTEST_HIGH_SCORE";
+#endif
+
+        Social.ReportScore(myGold, leader_board_id,
+            (bool success) =>
+            {
+#if UNITY_ANDROID
+                PlayGamesPlatform.Instance.ShowLeaderboardUI(leader_board_id);
+#elif UNITY_IPHONE
+                Social.ShowLeaderboardUI();
+#endif
+            }
+        );
+    }
 
     public void raceUpdate()
     {
@@ -221,6 +244,8 @@ public class UserManager : MonoBehaviour {
     }
 
     void Update () {
+
+        //Money_LeaderBoard();
 
         if (isRise)
         {
