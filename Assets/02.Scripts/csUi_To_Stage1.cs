@@ -4,16 +4,15 @@ using UnityEngine.SceneManagement;
 
 public class csUi_To_Stage1 : MonoBehaviour
 {
-    float Timer = 0;
+    AsyncOperation async;
 
-    void Update()
+    IEnumerator Start()
     {
-        Timer = Timer + Time.deltaTime;
+        async = SceneManager.LoadSceneAsync("STAGE_2");
 
-        if (Timer > 3)
+        while (!async.isDone)
         {
-            Timer = 0;
-            SceneManager.LoadScene("STAGE_2");
+            yield return true;
         }
     }
 }

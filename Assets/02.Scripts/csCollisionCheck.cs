@@ -150,12 +150,15 @@ public class csCollisionCheck : MonoBehaviour
 
             Z = 1000;
         }
-
         if (other.tag == "Force_Fixer2")
         {
-            JUMPER_POWER = 20000;
+            JUMPER_POWER = 18000;
 
             Z = 1000;
+        }
+        if (other.tag == "Force_Fixer3")
+        {
+            JUMPER_POWER = 14000;
         }
 
         if (other.tag == "Stage2_Over")
@@ -550,8 +553,10 @@ public class csCollisionCheck : MonoBehaviour
                     Y = 200.0f;///1000
                     Z = 800.0f;///4600
 
+                    car_state.respawn = other.gameObject.transform.FindChild("Point1").GetComponent<Transform>();
                     ai.m_Target = other.gameObject.transform.FindChild("Point1").GetComponent<Transform>();
                     tracker.target = other.gameObject.transform.FindChild("Point1").GetComponent<Transform>();
+
                     tracker.isHurdle = true;
                     //car_state.respawn = ai.m_Target;
                     //car_state.respawn = tracker.orignal_target;

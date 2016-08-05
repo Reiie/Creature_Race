@@ -4,16 +4,15 @@ using UnityEngine.SceneManagement;
 
 public class csNull_To_Intro : MonoBehaviour
 {
-    float Timer = 0;
+    AsyncOperation async;
 
-    void Update()
+    IEnumerator Start()
     {
-        Timer = Timer + Time.deltaTime;
+        async = SceneManager.LoadSceneAsync("1. Intro_Scene");
 
-        if (Timer > 7)
+        while (!async.isDone)
         {
-            Timer = 0;
-            SceneManager.LoadScene("1. Intro_Scene");
+            yield return true;
         }
     }
 }

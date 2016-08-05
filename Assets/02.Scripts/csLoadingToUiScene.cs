@@ -4,17 +4,15 @@ using UnityEngine.SceneManagement;
 
 public class csLoadingToUiScene : MonoBehaviour
 {
-    float Timer = 0;
+    AsyncOperation async;
 
-    void Update()
+    IEnumerator Start()
     {
-        Timer = Timer + Time.deltaTime;
+        async = SceneManager.LoadSceneAsync("3. UiScene");
 
-        if (Timer > 5)
+        while (!async.isDone)
         {
-            Timer = 0;
-            SceneManager.LoadScene("3. UiScene");   
+            yield return true;
         }
     }
-
 }

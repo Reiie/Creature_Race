@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SocialPlatforms;
+using GooglePlayGames;
 
 public class csRanking : MonoBehaviour
 {
@@ -89,6 +91,8 @@ public class csRanking : MonoBehaviour
 
     void Start()
     {
+        GooglePlayGames.PlayGamesPlatform.Activate();
+
         GameFIN = GameObject.Find("Directional Light").GetComponent<csGameFINISH>();
 
         Player1_traker = GameObject.Find("MyPlayer").GetComponent<WaypointProgressTracker>();
