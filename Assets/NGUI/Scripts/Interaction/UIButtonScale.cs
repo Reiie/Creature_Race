@@ -55,7 +55,6 @@ public class UIButtonScale : MonoBehaviour
 				(UICamera.IsHighlighted(gameObject) ? Vector3.Scale(mScale, hover) : mScale)).method = UITweener.Method.EaseInOut;
 		}
 	}
-
 	void OnHover (bool isOver)
 	{
 		if (enabled)
