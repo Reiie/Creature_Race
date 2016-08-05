@@ -57,7 +57,7 @@ public class AutoLogin : MonoBehaviour
                 }
                 else
                 {
-                    mStatusText = "Authentication failed";
+                    //mStatusText = "Authentication failed";
                 }
             });
         }

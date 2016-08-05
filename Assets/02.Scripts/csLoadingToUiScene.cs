@@ -8,6 +8,8 @@ public class csLoadingToUiScene : MonoBehaviour
 
     IEnumerator Start()
     {
+        yield return new WaitForSeconds(2.5f);
+
         async = SceneManager.LoadSceneAsync("3. UiScene");
 
         while (!async.isDone)

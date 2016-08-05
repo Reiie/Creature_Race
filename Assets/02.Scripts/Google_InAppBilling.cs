@@ -8,8 +8,6 @@ public class Google_InAppBilling : MonoBehaviour, IStoreListener
     private static IStoreController storeController;
     private static IExtensionProvider extensionProvider;
 
-    UserManager UI_UserManager;
-
     #region 상품ID
     // 상품ID는 구글 개발자 콘솔에 등록한 상품ID와 동일하게.
     public const string productId1 = "com.im.prove.item1";
@@ -22,8 +20,6 @@ public class Google_InAppBilling : MonoBehaviour, IStoreListener
     void Start()
     {
         InitializePurchasing();
-
-        UI_UserManager = GetComponent<UserManager>();
     }
 
     private bool IsInitialized()
@@ -155,7 +151,8 @@ public class Google_InAppBilling : MonoBehaviour, IStoreListener
 
                 // ex) gem 10개 지급
 
-                UI_UserManager.myGold = UI_UserManager.myGold + 10000000;
+                UserManager.Instance().myGold = UserManager.Instance().myGold + 100000000;
+                UserManager.Instance().DateLabelUpdate();
 
                 break;
 

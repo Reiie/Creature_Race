@@ -63,9 +63,24 @@ public class csCollisionCheck : MonoBehaviour
 
         JumperForce();
 
-        
+        if (car.m_WheelColliders[0].isGrounded == false && car.m_WheelColliders[1].isGrounded == false && car.m_WheelColliders[2].isGrounded == false && car.m_WheelColliders[3].isGrounded == false)
+        {
+            car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+            if (car_state.isJumper == true)
+            {
+                Debug.Log("잠김");
+            }
+        }
+        else if (car.m_WheelColliders[0].isGrounded == true || car.m_WheelColliders[1].isGrounded == true || car.m_WheelColliders[2].isGrounded == true || car.m_WheelColliders[3].isGrounded == true)
+        {
+            car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            if (car_state.isJumper == true)
+            {
+                Debug.Log("열림");
+            }
+        }
 
-        if (Game_End == true)
+            if (Game_End == true)
         {
             car_state.reverseTime = 0;
             car_state.carState = csCarState.CARSTATE.READY;
@@ -152,13 +167,13 @@ public class csCollisionCheck : MonoBehaviour
         }
         if (other.tag == "Force_Fixer2")
         {
-            JUMPER_POWER = 18000;
+            JUMPER_POWER = 22000;
 
             Z = 1000;
         }
         if (other.tag == "Force_Fixer3")
         {
-            JUMPER_POWER = 14000;
+            JUMPER_POWER = 18000;
         }
 
         if (other.tag == "Stage2_Over")
@@ -234,8 +249,12 @@ public class csCollisionCheck : MonoBehaviour
 
             Transform JumpingPoint;
 
+            car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY;
+
             JumpingPoint = other.gameObject.transform.FindChild("LookPoint").GetComponent<Transform>();
             transform.LookAt(JumpingPoint);
+
+            car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
             GetComponent<Rigidbody>().AddForce(transform.TransformVector(0.0f, 0.0f, 5.0f) * 100000);
 
@@ -250,10 +269,14 @@ public class csCollisionCheck : MonoBehaviour
 
 				Transform JumpingPoint;
 
-				JumpingPoint = other.gameObject.transform.FindChild("LookPoint").GetComponent<Transform>();
+                car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY;
+
+                JumpingPoint = other.gameObject.transform.FindChild("LookPoint").GetComponent<Transform>();
 				transform.LookAt(JumpingPoint);
 
-				GetComponent<Rigidbody>().AddForce(transform.TransformVector(0.0f, 0.0f, 20.0f) * 100000);
+                car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+
+                GetComponent<Rigidbody>().AddForce(transform.TransformVector(0.0f, 0.0f, 20.0f) * 100000);
 			}
 
 		}
@@ -332,7 +355,12 @@ public class csCollisionCheck : MonoBehaviour
                 {       
                     Transform JumpingPoint;
                     JumpingPoint = GameObject.Find("LookPoint1").transform;
+
+                    car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY;
+
                     transform.LookAt(JumpingPoint);
+
+                    car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
                     Jumping = true;
                     GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
@@ -412,7 +440,12 @@ public class csCollisionCheck : MonoBehaviour
                     Transform JumpingPoint;
 
                     JumpingPoint = other.gameObject.transform.FindChild("LookPoint").GetComponent<Transform>();
+
+                    car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY;
+
                     transform.LookAt(JumpingPoint);
+
+                    car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
                     Jumping = true;
                     GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
@@ -444,7 +477,19 @@ public class csCollisionCheck : MonoBehaviour
                     Transform JumpingPoint;
 
                     JumpingPoint = other.gameObject.transform.FindChild("LookPoint").GetComponent<Transform>();
+
+                    car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY;
+
+                    
+                    //Quaternion IMSI;
+                    //IMSI = gameObject.GetComponent<Transform>().rotation;
+
                     transform.LookAt(JumpingPoint);
+
+                    //Quaternion target = Quaternion.Euler(transform.rotation.x, IMSI.y, transform.rotation.z);
+                    //transform.rotation = target;
+
+                    car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
                     Jumping = true;
                     GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
@@ -452,8 +497,8 @@ public class csCollisionCheck : MonoBehaviour
 
                     CODEFIXER = false;
 
-                    Y = 200.0f;///1000
-                    Z = 1200.0f;///4600
+                    Y = 200.0f;///200
+                    Z = 1200.0f;///1200
 
                     ai.m_Target = other.gameObject.transform.FindChild("Point1").GetComponent<Transform>();
                     tracker.target = other.gameObject.transform.FindChild("Point1").GetComponent<Transform>();
@@ -476,7 +521,12 @@ public class csCollisionCheck : MonoBehaviour
                     Transform JumpingPoint;
 
                     JumpingPoint = other.gameObject.transform.FindChild("LookPoint").GetComponent<Transform>();
+
+                    car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY;
+
                     transform.LookAt(JumpingPoint);
+
+                    car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
                     Jumping = true;
                     GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
@@ -509,7 +559,12 @@ public class csCollisionCheck : MonoBehaviour
                     Transform JumpingPoint;
 
                     JumpingPoint = other.gameObject.transform.FindChild("LookPoint").GetComponent<Transform>();
+
+                    car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY;
+
                     transform.LookAt(JumpingPoint);
+
+                    car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
                     Jumping = true;
                     GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
@@ -542,7 +597,12 @@ public class csCollisionCheck : MonoBehaviour
                     Transform JumpingPoint;
 
                     JumpingPoint = other.gameObject.transform.FindChild("LookPoint").GetComponent<Transform>();
+
+                    car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY;
+
                     transform.LookAt(JumpingPoint);
+
+                    car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
                     Jumping = true;
                     GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
@@ -575,7 +635,12 @@ public class csCollisionCheck : MonoBehaviour
                 {
                     Transform JumpingPoint;
                     JumpingPoint = other.gameObject.transform.FindChild("LookPoint").GetComponent<Transform>();
+
+                    car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY;
+
                     transform.LookAt(JumpingPoint);
+
+                    car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
                     Jumping = true;
                     GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);

@@ -8,6 +8,8 @@ public class csNull_To_Intro : MonoBehaviour
 
     IEnumerator Start()
     {
+        yield return new WaitForSeconds(2.5f);
+
         async = SceneManager.LoadSceneAsync("1. Intro_Scene");
 
         while (!async.isDone)

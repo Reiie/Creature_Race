@@ -8,6 +8,8 @@ public class csUi_To_Stage1 : MonoBehaviour
 
     IEnumerator Start()
     {
+        yield return new WaitForSeconds(2.5f);
+
         async = SceneManager.LoadSceneAsync("STAGE_2");
 
         while (!async.isDone)
