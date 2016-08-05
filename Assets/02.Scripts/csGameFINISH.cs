@@ -1053,8 +1053,8 @@ public class csGameFINISH : MonoBehaviour
       //  UserManager.Instance().first = true;
         //UserManager.Instance().nowDate = UserManager.Instance().nowDate.AddDays(1);
        // int tmp = PlayerPrefs.GetInt("ProgressCount");
-        PlayerPrefs.SetInt("ProgressCount", 0);
-        UserManager.Instance().userInfoSave();
+        //PlayerPrefs.SetInt("ProgressCount", 0);
+        //UserManager.Instance().userInfoSave();
 
 
         yield return new WaitForSeconds(5.0f);
