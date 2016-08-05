@@ -160,7 +160,7 @@ public class UserManager : MonoBehaviour {
         invenLabel.text = name;
         inputLabel.text = name;
 
-        //prefsInit();
+     //   prefsInit();
 
         DateLabelUpdate();
         StartCoroutine(Init());
@@ -957,7 +957,9 @@ public class UserManager : MonoBehaviour {
         if (nowWork == csWork.Work.Race)
         {
             raceNotice.SetActive(true);
-          //  raceNotice.GetComponent<TweenScale>().ResetToBeginning();
+            PlayerPrefs.SetInt("ProgressCount", 0);
+            //UserManager.Instance().userInfoSave();
+            //  raceNotice.GetComponent<TweenScale>().ResetToBeginning();
             //raceNotice.GetComponent<TweenScale>().PlayForward();
         }
         else
@@ -988,7 +990,8 @@ public class UserManager : MonoBehaviour {
         // 오늘날짜로 업데이트 - 소지골지도 업데이트
         DateLabelUpdate();
         Debug.Log("넥스트데이");
-        WorkUpdate();        TouchSreen.SetActive(false);
+        WorkUpdate();
+        TouchSreen.SetActive(false);
         WorkEnd.SetActive(false);
         ingLabel.SetActive(true);
         rewardGold.text = "0";
@@ -1399,6 +1402,7 @@ public class UserManager : MonoBehaviour {
 
     public void NameChange()
     {
+        PlayerPrefs.SetString("Name", inputLabel.text);
         name = inputLabel.text;
         creatureLabel.text = name;
         invenLabel.text = name;
@@ -1592,7 +1596,7 @@ public class UserManager : MonoBehaviour {
 
     public void AdsSkip()
     {
-        for(int i = 0; i< 5;i++)
+        for(int i = 0; i< 6;i++)
         {
             nowDate = nowDate.AddDays(1);
             int tmp = PlayerPrefs.GetInt("ProgressCount");
@@ -1621,11 +1625,20 @@ public class UserManager : MonoBehaviour {
                 }
             }
         }
-        int tmp2 = PlayerPrefs.GetInt("ProgressCount");
+     /*   int tmp2 = PlayerPrefs.GetInt("ProgressCount");
         PlayerPrefs.SetInt("ProgressCount", tmp2 + 1);
         nowDate = nowDate.AddDays(1);
+*/
+
         DateLabelUpdate();
         WorkUpdate();
+
+        StartCoroutine(adsSkipGoRace());
+    }
+
+    IEnumerator adsSkipGoRace()
+    {
+        yield return new WaitForEndOfFrame();
         Progress();
     }
 }
