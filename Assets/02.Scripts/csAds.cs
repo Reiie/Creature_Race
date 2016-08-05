@@ -43,7 +43,8 @@ public class csAds : MonoBehaviour
                 break;
 
             case ShowResult.Skipped:
-
+                UserManager.Instance().AdsSkip();
+                Debug.Log("광고스킵");
                 break;
 
             case ShowResult.Failed:

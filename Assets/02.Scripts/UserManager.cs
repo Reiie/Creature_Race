@@ -957,8 +957,8 @@ public class UserManager : MonoBehaviour {
         if (nowWork == csWork.Work.Race)
         {
             raceNotice.SetActive(true);
-            raceNotice.GetComponent<TweenScale>().ResetToBeginning();
-            raceNotice.GetComponent<TweenScale>().PlayForward();
+          //  raceNotice.GetComponent<TweenScale>().ResetToBeginning();
+            //raceNotice.GetComponent<TweenScale>().PlayForward();
         }
         else
         {
