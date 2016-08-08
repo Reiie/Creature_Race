@@ -136,6 +136,9 @@ public class UserManager : MonoBehaviour {
               PlayerPrefs.SetInt("Day", 1);
               PlayerPrefs.SetInt("ProgressCount",0);
 
+             // 리더보드 관련 변수
+              PlayerPrefs.SetInt("MixCount", 0);
+
               name = PlayerPrefs.GetString("Name");
               stamina = PlayerPrefs.GetInt("Stamina");
               myGold = PlayerPrefs.GetInt("MyGold");
@@ -176,6 +179,9 @@ public class UserManager : MonoBehaviour {
         PlayerPrefs.SetInt("Year", nowDate.Year);
         PlayerPrefs.SetInt("Month", nowDate.Month);
         PlayerPrefs.SetInt("Day", nowDate.Day);
+
+        // 리더보드 최대 골드 갱신
+        Money_LeaderBoard();
     }
 
 
@@ -197,6 +203,7 @@ public class UserManager : MonoBehaviour {
         GooglePlayGames.PlayGamesPlatform.Activate();
     }
 
+    // 리더보드 최대 소지 골드 업데이트
     public void Money_LeaderBoard()
     {
         string leader_board_id = "CgkI9ZbZnpIHEAIQBw";
@@ -216,6 +223,52 @@ public class UserManager : MonoBehaviour {
 #endif
             }
         );
+    }
+    // 리더보드 조합 횟수 업데이트
+    public void Mix_LeaderBoard()
+    {
+        string leader_board_id = "CgkI9ZbZnpIHEAIQCg";
+#if UNITY_ANDROID
+        leader_board_id = "CgkI9ZbZnpIHEAIQCg";
+#elif UNITY_IPHONE
+        leader_board_id = "SOCIALTEST_HIGH_SCORE";
+#endif
+
+        Social.ReportScore(PlayerPrefs.GetInt("MixCount"), leader_board_id,
+            (bool success) =>
+            {
+#if UNITY_ANDROID
+                PlayGamesPlatform.Instance.ShowLeaderboardUI(leader_board_id);
+#elif UNITY_IPHONE
+                Social.ShowLeaderboardUI();
+#endif
+            }
+        );
+    }
+    // 랜덤박스 구입 업적
+    public void AchievementRandomBox()
+    {
+        string unLockAchievement_id = "CgkI9ZbZnpIHEAIQAg";
+
+        Social.ReportProgress(unLockAchievement_id, 100.0f, (bool success) =>
+        { });
+    }
+    // 판매 처음 이용 업적
+    public void AchievementFirstSell()
+    {
+        string unLockAchievement_id = "CgkI9ZbZnpIHEAIQAw";
+
+        Social.ReportProgress(unLockAchievement_id, 100.0f, (bool success) =>
+        { });
+    }
+
+    // 첫 스케줄 시작 업적
+    public void AchievementFirstSchedule()
+    {
+        string unLockAchievement_id = "CgkI9ZbZnpIHEAIQBA";
+
+        Social.ReportProgress(unLockAchievement_id, 100.0f, (bool success) =>
+        { });
     }
 
     public void raceUpdate()
@@ -1037,9 +1090,7 @@ public class UserManager : MonoBehaviour {
         userInfoSave();
         StartCoroutine(nextRaceDay());
     }
-
-    
-    
+     
     IEnumerator nextRaceDay()
     {
         yield return new WaitForSeconds(0.2f);
@@ -1423,7 +1474,6 @@ public class UserManager : MonoBehaviour {
         // 현재 스태미나 갱신
         s_manager.checkStamina();
     }
-
 
     public void NameChange()
     {

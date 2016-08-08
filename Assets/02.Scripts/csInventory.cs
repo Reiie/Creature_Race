@@ -12,7 +12,7 @@ public class csInventory : MonoBehaviour {
     public GameObject rewardWindow;
     public UILabel rewardSell;
 
-    
+    public GameObject makeFail;
 
     public csSlotStorage sell;
     public UILabel sellPrice;
@@ -255,6 +255,7 @@ public class csInventory : MonoBehaviour {
         }
         else
         {
+            makeFail.SetActive(true);
             Debug.Log("만들수없다");
         }           
     }
@@ -346,8 +347,12 @@ public class csInventory : MonoBehaviour {
     }
     public void PartMake()
     {
+        // 리더보드 갱신
+        PlayerPrefs.SetInt("MixCount", PlayerPrefs.GetInt("MixCount") + 1);
+        UserManager.Instance().Mix_LeaderBoard();
+        
         // 재료 메탈
-        for(int i = 0; i < needMetalCount; i++)
+        for (int i = 0; i < needMetalCount; i++)
         {
             MySlots[metalIndex].Items.Pop();
         }
