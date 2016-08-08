@@ -165,7 +165,7 @@ public class UserManager : MonoBehaviour {
         invenLabel.text = name;
         inputLabel.text = name;
 
-     //   prefsInit();
+      //  prefsInit();
 
         DateLabelUpdate();
         StartCoroutine(Init());
