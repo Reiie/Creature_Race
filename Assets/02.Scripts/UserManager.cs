@@ -138,6 +138,7 @@ public class UserManager : MonoBehaviour {
 
              // 리더보드 관련 변수
               PlayerPrefs.SetInt("MixCount", 0);
+              PlayerPrefs.SetInt("MaxGold", 0);
 
               name = PlayerPrefs.GetString("Name");
               stamina = PlayerPrefs.GetInt("Stamina");
@@ -172,7 +173,8 @@ public class UserManager : MonoBehaviour {
     }
 
     public void userInfoSave()
-    {      
+    {
+        
         PlayerPrefs.SetString("Name", name);
         PlayerPrefs.SetInt("Stamina", stamina);
         PlayerPrefs.SetInt("MyGold", myGold);
@@ -181,7 +183,11 @@ public class UserManager : MonoBehaviour {
         PlayerPrefs.SetInt("Day", nowDate.Day);
 
         // 리더보드 최대 골드 갱신
-        Money_LeaderBoard();
+        if (PlayerPrefs.GetInt("MaxGold") < PlayerPrefs.GetInt("MyGold"))
+        {
+            PlayerPrefs.SetInt("MaxGold", PlayerPrefs.GetInt("MyGold"));
+            Money_LeaderBoard();
+        }    
     }
 
 

@@ -142,12 +142,6 @@ public class csRanking : MonoBehaviour
 
     void Update()
 	{
-        Debug.Log("P1 = " + P1_Car_State.carState);
-        Debug.Log("P2 = " + P2_Car_State.carState);
-        Debug.Log("P3 = " + P3_Car_State.carState);
-        Debug.Log("P4 = " + P4_Car_State.carState);
-
-
         P1Rep.text = Player1_CollCheck.Checking_Rep.ToString();
         P2Rep.text = Player2_CollCheck.Checking_Rep.ToString();
         P3Rep.text = Player3_CollCheck.Checking_Rep.ToString();
