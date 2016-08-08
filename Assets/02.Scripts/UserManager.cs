@@ -182,12 +182,12 @@ public class UserManager : MonoBehaviour {
         PlayerPrefs.SetInt("Month", nowDate.Month);
         PlayerPrefs.SetInt("Day", nowDate.Day);
 
-        // 리더보드 최대 골드 갱신
+       /* // 리더보드 최대 골드 갱신
         if (PlayerPrefs.GetInt("MaxGold") < PlayerPrefs.GetInt("MyGold"))
         {
             PlayerPrefs.SetInt("MaxGold", PlayerPrefs.GetInt("MyGold"));
             Money_LeaderBoard();
-        }    
+        }    */
     }
 
 
@@ -208,7 +208,7 @@ public class UserManager : MonoBehaviour {
     {
         GooglePlayGames.PlayGamesPlatform.Activate();
     }
-
+/*
     // 리더보드 최대 소지 골드 업데이트
     public void Money_LeaderBoard()
     {
@@ -229,7 +229,7 @@ public class UserManager : MonoBehaviour {
 #endif
             }
         );
-    }
+    }*/
     // 리더보드 조합 횟수 업데이트
     public void Mix_LeaderBoard()
     {
