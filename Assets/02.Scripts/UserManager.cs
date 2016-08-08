@@ -271,6 +271,15 @@ public class UserManager : MonoBehaviour {
         { });
     }
 
+    // 첫 승리 업적
+    public void AchievementFirstVictory()
+    {
+        string unLockAchievement_id = "CgkI9ZbZnpIHEAIQBQ";
+
+        Social.ReportProgress(unLockAchievement_id, 100.0f, (bool success) =>
+        { });
+    }
+
     public void raceUpdate()
     {
          myGold += raceReward;

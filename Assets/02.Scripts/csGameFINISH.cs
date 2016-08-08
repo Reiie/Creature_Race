@@ -130,6 +130,8 @@ public class csGameFINISH : MonoBehaviour
             {
                 Player1.transform.position = Winner1_Position.transform.position;
                 Player1_Rank = 1;
+                // 첫 승리 업적 달성
+                UserManager.Instance().AchievementFirstVictory();
             }
             else if (Ranking.Player1_Win == false && Ranking.Player2_Win == true && Ranking.Player3_Win == false && Ranking.Player4_Win == false)
             {
@@ -1220,6 +1222,7 @@ public class csGameFINISH : MonoBehaviour
 
     IEnumerator NEXT()
     {
+
         yield return new WaitForSeconds(5.0f);
 
         SceneManager.LoadScene("2. Intro_To_Ui_Loading");
