@@ -83,7 +83,7 @@ public class csCarInfoUpdate : MonoBehaviour {
                     }
                     else if (csItemDataBase.Instance().PartDB[i].ability == 2)
                     {
-                        car_state.isClimber = true;
+                      //  car_state.isClimber = true;
                     }
                     else if (csItemDataBase.Instance().PartDB[i].ability == 3)
                     {
@@ -109,7 +109,7 @@ public class csCarInfoUpdate : MonoBehaviour {
                     }
                     else if (csItemDataBase.Instance().PartDB[i].ability == 2)
                     {
-                        car_state.isClimber = true;
+                       // car_state.isClimber = true;
                     }
                     else if (csItemDataBase.Instance().PartDB[i].ability == 3)
                     {
@@ -134,7 +134,7 @@ public class csCarInfoUpdate : MonoBehaviour {
                     }
                     else if (csItemDataBase.Instance().PartDB[i].ability == 2)
                     {
-                        car_state.isClimber = true;
+                      //  car_state.isClimber = true;
                     }
                     else if (csItemDataBase.Instance().PartDB[i].ability == 3)
                     {
@@ -158,7 +158,7 @@ public class csCarInfoUpdate : MonoBehaviour {
                     }
                     else if (csItemDataBase.Instance().PartDB[i].ability == 2)
                     {
-                        car_state.isClimber = true;
+                       // car_state.isClimber = true;
                     }
                     else if (csItemDataBase.Instance().PartDB[i].ability == 3)
                     {
@@ -183,7 +183,7 @@ public class csCarInfoUpdate : MonoBehaviour {
                     }
                     else if (csItemDataBase.Instance().PartDB[i].ability == 2)
                     {
-                        car_state.isClimber = true;
+                      //  car_state.isClimber = true;
                     }
                     else if (csItemDataBase.Instance().PartDB[i].ability == 3)
                     {

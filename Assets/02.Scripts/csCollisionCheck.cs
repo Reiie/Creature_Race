@@ -472,13 +472,13 @@ public class csCollisionCheck : MonoBehaviour
                     car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY;
 
                     
-                    //Quaternion IMSI;
-                    //IMSI = gameObject.GetComponent<Transform>().rotation;
+                  //  Quaternion IMSI;
+                //    IMSI = gameObject.GetComponent<Transform>().rotation;
 
                     transform.LookAt(JumpingPoint);
 
-                    //Quaternion target = Quaternion.Euler(transform.rotation.x, IMSI.y, transform.rotation.z);
-                    //transform.rotation = target;
+                  //  Quaternion target = Quaternion.Euler(transform.rotation.x, IMSI.y, transform.rotation.z);
+                  //  transform.rotation = target;
 
                     car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 

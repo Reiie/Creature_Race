@@ -518,8 +518,8 @@ public class csCarState : MonoBehaviour
                 J_Particle.transform.position = gameObject.transform.position;
                 Destroy(J_Particle, 0.5f);
 
-                GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY;
-                GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX;
+                GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+                //GetComponent<Rigidbody>().constraints = ;
                 StartCoroutine(Jump_To_Run());
 
                 break;
