@@ -8,6 +8,8 @@ public class csRanking : MonoBehaviour
 {
     csGameFINISH GameFIN;
 
+    public Text P1_Button_Text;
+
 	public GameObject Player1;
 	public GameObject Player2;
 	public GameObject Player3;
@@ -93,6 +95,8 @@ public class csRanking : MonoBehaviour
     {
         GooglePlayGames.PlayGamesPlatform.Activate();
 
+        P1_Button_Text.text = UserManager.Instance().name;
+
         GameFIN = GameObject.Find("Directional Light").GetComponent<csGameFINISH>();
 
         Player1_traker = GameObject.Find("MyPlayer").GetComponent<WaypointProgressTracker>();
@@ -138,6 +142,12 @@ public class csRanking : MonoBehaviour
 
     void Update()
 	{
+        Debug.Log("P1 = " + P1_Car_State.carState);
+        Debug.Log("P2 = " + P2_Car_State.carState);
+        Debug.Log("P3 = " + P3_Car_State.carState);
+        Debug.Log("P4 = " + P4_Car_State.carState);
+
+
         P1Rep.text = Player1_CollCheck.Checking_Rep.ToString();
         P2Rep.text = Player2_CollCheck.Checking_Rep.ToString();
         P3Rep.text = Player3_CollCheck.Checking_Rep.ToString();
@@ -681,6 +691,9 @@ public class csRanking : MonoBehaviour
             Player2_Win = false;
             Player3_Win = false;
             Player4_Win = false;
+
+            Player1_traker.progressDistance = Player1_traker.progressDistance + 10000.0f;
+
             StartCoroutine(Stage_Over_Stop());
         }
 
@@ -693,6 +706,9 @@ public class csRanking : MonoBehaviour
             Player2_Win = true;
             Player3_Win = false;
             Player4_Win = false;
+
+            Player2_traker.progressDistance = Player2_traker.progressDistance + 10000.0f;
+
             StartCoroutine(Stage_Over_Stop());
         }
 
@@ -705,6 +721,9 @@ public class csRanking : MonoBehaviour
             Player2_Win = false;
             Player3_Win = true;
             Player4_Win = false;
+
+            Player3_traker.progressDistance = Player3_traker.progressDistance + 10000.0f;
+
             StartCoroutine(Stage_Over_Stop());
         }
         else if (Player4_traker.progressDistance > Player2_traker.progressDistance &&
@@ -716,6 +735,9 @@ public class csRanking : MonoBehaviour
             Player2_Win = false;
             Player3_Win = false;
             Player4_Win = true;
+
+            Player4_traker.progressDistance = Player4_traker.progressDistance + 10000.0f;
+
             StartCoroutine(Stage_Over_Stop());
         }
     }

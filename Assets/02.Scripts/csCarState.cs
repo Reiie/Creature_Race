@@ -65,6 +65,8 @@ public class csCarState : MonoBehaviour
     public bool CanClimbing = false;
 
 
+
+
     public enum CARSTATE
     {
         REVERSE = -1,
@@ -142,18 +144,40 @@ public class csCarState : MonoBehaviour
 
             if (carState != CARSTATE.BIG_JUMP)
             {
-                StartCoroutine(BlinkEffect());
+                if (carState != CARSTATE.READY)
+                {
+                    StartCoroutine(BlinkEffect());
+                }
+                else if (carState == CARSTATE.READY)
+                {
+                    carState = CARSTATE.READY;
+                }      
             }
             else if (carState != CARSTATE.BIG_JUMP_READY)
             {
-                StartCoroutine(BlinkEffect());
+                if (carState != CARSTATE.READY)
+                {
+                    StartCoroutine(BlinkEffect());
+                }
+                else if (carState == CARSTATE.READY)
+                {
+                    carState = CARSTATE.READY;
+                }
             }
         }
 
         if (car.CurrentSpeed == 0 && carState == CARSTATE.BACKFORCE)
         {
             isBackForcing = false;
-            StartCoroutine(ToBlink());
+
+            if (carState != CARSTATE.READY)
+            {
+                StartCoroutine(ToBlink());
+            }
+            else if (carState == CARSTATE.READY)
+            {
+                carState = CARSTATE.READY;
+            }
         }
 
         if (HP_Timer > 1.0)
@@ -169,8 +193,16 @@ public class csCarState : MonoBehaviour
 
         if (HP == 0)
         {
-            Reverse();
-            StartCoroutine(ToBlink());
+            Reverse();            
+
+            if (carState != CARSTATE.READY)
+            {
+                StartCoroutine(ToBlink());
+            }
+            else if (carState == CARSTATE.READY)
+            {
+                carState = CARSTATE.READY;
+            }
         }
 
         if (isBackForcing == true)
@@ -219,18 +251,24 @@ public class csCarState : MonoBehaviour
             {
                 if (carState != CARSTATE.BIG_JUMP)
                 {
-                    carState = CARSTATE.RECOVERY;
-                    if (isJumper == true)
+                    if (carState != CARSTATE.READY)
                     {
-                        Debug.Log("빅점프중리커버리0");
+                        carState = CARSTATE.RECOVERY;
+                    }
+                    else if (carState == CARSTATE.READY)
+                    {
+                        carState = CARSTATE.READY;
                     }
                 }
                 else if (carState != CARSTATE.BIG_JUMP_READY)
                 {
-                    carState = CARSTATE.RECOVERY;
-                    if (isJumper == true)
+                    if (carState != CARSTATE.READY)
                     {
-                        Debug.Log("빅점프중리커버리1");
+                        carState = CARSTATE.RECOVERY;
+                    }
+                    else if (carState == CARSTATE.READY)
+                    {
+                        carState = CARSTATE.READY;
                     }
                 }
             }
@@ -318,47 +356,62 @@ public class csCarState : MonoBehaviour
                 {
                     carState = CARSTATE.RECOVERY;
                     Climbing_Count = 0;
-
-                    if (isJumper == true)
-                    {
-                        Debug.Log("빅점프중리커버리2");
-                    }
                 }
 
                 break;
 
             case CARSTATE.RECOVERY:
 
-                if (carState != CARSTATE.READY)
+                if (CollCheck.Game_End == false)
                 {
-                    tracker.target = tracker.orignal_target;
-                    ai.m_Target = tracker.orignal_target;
-
-                    if (carState != CARSTATE.BIG_JUMP || carState != CARSTATE.BIG_JUMP_READY)
+                    if (carState != CARSTATE.READY)
                     {
-                        if (boolRecovery)
-                        {
-                            boolRecovery = false;
-                            //reverseTime = 0;
+                        tracker.target = tracker.orignal_target;
+                        ai.m_Target = tracker.orignal_target;
 
-                            if (carState != CARSTATE.BIG_JUMP)
+                        if (carState != CARSTATE.BIG_JUMP || carState != CARSTATE.BIG_JUMP_READY)
+                        {
+                            if (boolRecovery)
                             {
-                                StartCoroutine(BlinkEffect());
-                            }
-                            else if (carState != CARSTATE.BIG_JUMP_READY)
-                            {
-                                StartCoroutine(BlinkEffect());
+                                boolRecovery = false;
+
+                                if (carState != CARSTATE.BIG_JUMP)
+                                {
+                                    if (carState != CARSTATE.READY)
+                                    {
+                                        StartCoroutine(BlinkEffect());
+                                    }
+                                    else if (carState == CARSTATE.READY)
+                                    {
+                                        carState = CARSTATE.READY;
+                                    }                                    
+                                }
+                                else if (carState != CARSTATE.BIG_JUMP_READY)
+                                {
+                                    if (carState != CARSTATE.READY)
+                                    {
+                                        StartCoroutine(BlinkEffect());
+                                    }
+                                    else if (carState == CARSTATE.READY)
+                                    {
+                                        carState = CARSTATE.READY;
+                                    }
+                                }
                             }
                         }
+                        else if (carState == CARSTATE.BIG_JUMP)
+                        {
+                            carState = CARSTATE.BIG_JUMP;
+                        }
+                        else if (carState == CARSTATE.BIG_JUMP_READY)
+                        {
+                            carState = CARSTATE.BIG_JUMP_READY;
+                        }
                     }
-                    else if (carState == CARSTATE.BIG_JUMP)
-                    {
-                        carState = CARSTATE.BIG_JUMP;
-                    }
-                    else if (carState == CARSTATE.BIG_JUMP_READY)
-                    {
-                        carState = CARSTATE.BIG_JUMP_READY;
-                    }
+                }
+                else if (CollCheck.Game_End == true)
+                {
+                    carState = CARSTATE.READY;
                 }
 
                 break;
@@ -378,11 +431,25 @@ public class csCarState : MonoBehaviour
 
                 if (carState != CARSTATE.BIG_JUMP)
                 {
-                    StartCoroutine(BlinkEffect());
+                    if (carState != CARSTATE.READY)
+                    {
+                        StartCoroutine(BlinkEffect());
+                    }
+                    else if (carState == CARSTATE.READY)
+                    {
+                        carState = CARSTATE.READY;
+                    }
                 }
                 else if (carState != CARSTATE.BIG_JUMP_READY)
                 {
-                    StartCoroutine(BlinkEffect());
+                    if (carState != CARSTATE.READY)
+                    {
+                        StartCoroutine(BlinkEffect());
+                    }
+                    else if (carState == CARSTATE.READY)
+                    {
+                        carState = CARSTATE.READY;
+                    }
                 }
 
                 car.AccelControl = true;
@@ -514,11 +581,25 @@ public class csCarState : MonoBehaviour
 	{
         if (carState != CARSTATE.BIG_JUMP)
         {
-            StartCoroutine(BlinkEffect());
+            if (carState != CARSTATE.READY)
+            {
+                StartCoroutine(BlinkEffect());
+            }
+            else if (carState == CARSTATE.READY)
+            {
+                carState = CARSTATE.READY;
+            }
         }
         else if (carState != CARSTATE.BIG_JUMP_READY)
         {
-            StartCoroutine(BlinkEffect());
+            if (carState != CARSTATE.READY)
+            {
+                StartCoroutine(BlinkEffect());
+            }
+            else if (carState == CARSTATE.READY)
+            {
+                carState = CARSTATE.READY;
+            }
         }
     }
 
@@ -531,11 +612,25 @@ public class csCarState : MonoBehaviour
 
         if (carState != CARSTATE.BIG_JUMP)
         {
-            StartCoroutine(BlinkEffect());
+            if (carState != CARSTATE.READY)
+            {
+                StartCoroutine(BlinkEffect());
+            }
+            else if (carState == CARSTATE.READY)
+            {
+                carState = CARSTATE.READY;
+            }
         }
         else if (carState != CARSTATE.BIG_JUMP_READY)
         {
-            StartCoroutine(BlinkEffect());
+            if (carState != CARSTATE.READY)
+            {
+                StartCoroutine(BlinkEffect());
+            }
+            else if (carState == CARSTATE.READY)
+            {
+                carState = CARSTATE.READY;
+            }
         }
     }
 
@@ -544,48 +639,56 @@ public class csCarState : MonoBehaviour
         tracker.target = tracker.orignal_target;
         ai.m_Target = tracker.orignal_target;
 
-        if (carState != CARSTATE.BIG_JUMP)
+        if (carState != CARSTATE.READY && CollCheck.GAMEGAME_ENDEND == false)
         {
-            if (Recovery_Fix == true)
+            Debug.Log("여기여기");
+            if (carState != CARSTATE.BIG_JUMP)
             {
-                Recovery_Fix = false;
-
-                int count = 0;
-                HP = MaxHp;
-                while (count < 3)
+                if (Recovery_Fix == true)
                 {
-                    childBody.SetActive(false);
-                    yield return new WaitForSeconds(0.15f);
+                    Recovery_Fix = false;
 
-                    childBody.SetActive(true);
-                    yield return new WaitForSeconds(0.15f);
+                    int count = 0;
+                    HP = MaxHp;
+                    while (count < 3)
+                    {
+                        childBody.SetActive(false);
+                        yield return new WaitForSeconds(0.15f);
 
-                    count++;
+                        childBody.SetActive(true);
+                        yield return new WaitForSeconds(0.15f);
+
+                        count++;
+                    }
+                    respawnCar();
                 }
-                respawnCar();
+            }
+            else if (carState != CARSTATE.BIG_JUMP_READY)
+            {
+                if (Recovery_Fix == true)
+                {
+                    Recovery_Fix = false;
+
+                    int count = 0;
+                    HP = MaxHp;
+                    while (count < 3)
+                    {
+                        childBody.SetActive(false);
+                        yield return new WaitForSeconds(0.15f);
+
+                        childBody.SetActive(true);
+                        yield return new WaitForSeconds(0.15f);
+
+                        count++;
+                    }
+                    respawnCar();
+                }
             }
         }
-        else if (carState != CARSTATE.BIG_JUMP_READY)
+        else if (carState == CARSTATE.READY && CollCheck.GAMEGAME_ENDEND == true)
         {
-            if (Recovery_Fix == true)
-            {
-                Recovery_Fix = false;
-
-                int count = 0;
-                HP = MaxHp;
-                while (count < 3)
-                {
-                    childBody.SetActive(false);
-                    yield return new WaitForSeconds(0.15f);
-
-                    childBody.SetActive(true);
-                    yield return new WaitForSeconds(0.15f);
-
-                    count++;
-                }
-                respawnCar();
-            }
-        }
+            carState = CARSTATE.READY;
+        }              
     }
 
     void respawnCar()
@@ -624,7 +727,14 @@ public class csCarState : MonoBehaviour
             H_Particle.transform.parent = gameObject.transform;
             Destroy(H_Particle, 6.0f);
 
-            carState = CARSTATE.RECOVERY;
+            if (carState != CARSTATE.READY)
+            {
+                carState = CARSTATE.RECOVERY;
+            }
+            else if (carState == CARSTATE.READY)
+            {
+                carState = CARSTATE.READY;
+            }
 
             if (isJumper == true)
             {

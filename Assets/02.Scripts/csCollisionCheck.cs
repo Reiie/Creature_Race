@@ -26,6 +26,7 @@ public class csCollisionCheck : MonoBehaviour
 
     public float Lap_Time = 0;
 
+    public bool GAMEGAME_ENDEND = false;
 
     /// 이펙트부분
 
@@ -66,30 +67,20 @@ public class csCollisionCheck : MonoBehaviour
         if (car.m_WheelColliders[0].isGrounded == false && car.m_WheelColliders[1].isGrounded == false && car.m_WheelColliders[2].isGrounded == false && car.m_WheelColliders[3].isGrounded == false)
         {
             car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-            if (car_state.isJumper == true)
-            {
-                Debug.Log("잠김");
-            }
         }
         else if (car.m_WheelColliders[0].isGrounded == true || car.m_WheelColliders[1].isGrounded == true || car.m_WheelColliders[2].isGrounded == true || car.m_WheelColliders[3].isGrounded == true)
         {
             car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-            if (car_state.isJumper == true)
-            {
-                Debug.Log("열림");
-            }
         }
 
-            if (Game_End == true)
+        if (Game_End == true)
         {
             car_state.reverseTime = 0;
             car_state.carState = csCarState.CARSTATE.READY;
             car.GetComponent<Rigidbody>().velocity = Vector3.zero;
             car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-
-            
-
             // car.m_Topspeed = 0;
+            GAMEGAME_ENDEND = true;
         }
 
         if (Jumping == true)
