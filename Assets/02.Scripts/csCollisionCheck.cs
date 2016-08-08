@@ -471,14 +471,7 @@ public class csCollisionCheck : MonoBehaviour
 
                     car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY;
 
-                    
-                  //  Quaternion IMSI;
-                //    IMSI = gameObject.GetComponent<Transform>().rotation;
-
                     transform.LookAt(JumpingPoint);
-
-                  //  Quaternion target = Quaternion.Euler(transform.rotation.x, IMSI.y, transform.rotation.z);
-                  //  transform.rotation = target;
 
                     car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
@@ -495,13 +488,13 @@ public class csCollisionCheck : MonoBehaviour
                     tracker.target = other.gameObject.transform.FindChild("Point1").GetComponent<Transform>();
                     tracker.isHurdle = true;
                     car_state.respawn = other.gameObject.transform.FindChild("Point1").GetComponent<Transform>();
-                    //car_state.respawn = tracker.orignal_target;
+
                     StartCoroutine(CODEFIXER_TRIGGER());
                 }
             }
         }
 
-        if (other.tag == "Stage2_JumpIntersection2")
+        if (other.tag == "Stage2_JumpIntersection11")
         {
             if (car_state.isJumper == true)
             {
@@ -525,8 +518,45 @@ public class csCollisionCheck : MonoBehaviour
 
                     CODEFIXER = false;
 
-                    Y = 100.0f;///1000
-                    Z = 800.0f;///4600
+                    Y = 800.0f;///200
+                    Z = 1200.0f;///1200
+
+                    ai.m_Target = other.gameObject.transform.FindChild("Point1").GetComponent<Transform>();
+                    tracker.target = other.gameObject.transform.FindChild("Point1").GetComponent<Transform>();
+                    tracker.isHurdle = true;
+                    car_state.respawn = other.gameObject.transform.FindChild("Point1").GetComponent<Transform>();
+
+                    StartCoroutine(CODEFIXER_TRIGGER());
+                }
+            }
+        }
+
+        if (other.tag == "Stage2_JumpIntersection2")
+        {
+            if (car_state.isJumper == true)
+            {
+                CODEFIXER = true;
+
+                if (CODEFIXER == true)
+                {
+                    JUMPER_POWER = 2000;
+
+                    Transform JumpingPoint;
+
+                    JumpingPoint = other.gameObject.transform.FindChild("LookPoint").GetComponent<Transform>();
+
+                    car.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+
+                    transform.LookAt(JumpingPoint);
+
+                    Jumping = true;
+                    GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+                    car_state.carState = csCarState.CARSTATE.JUMP;
+
+                    CODEFIXER = false;
+
+                    Y = 15000.0f;///1000
+                    Z = 200.0f;///4600
 
                     ai.m_Target = other.gameObject.transform.FindChild("Point1").GetComponent<Transform>();
                     tracker.target = other.gameObject.transform.FindChild("Point1").GetComponent<Transform>();
