@@ -9,6 +9,7 @@ public class csRanking : MonoBehaviour
     csGameFINISH GameFIN;
 
     public Text P1_Button_Text;
+    public Text P1_Name;
 
 	public GameObject Player1;
 	public GameObject Player2;
@@ -98,6 +99,8 @@ public class csRanking : MonoBehaviour
         P1_Button_Text.text = UserManager.Instance().name;
 
         GameFIN = GameObject.Find("Directional Light").GetComponent<csGameFINISH>();
+
+        P1_Name.text = UserManager.Instance().name;
 
         Player1_traker = GameObject.Find("MyPlayer").GetComponent<WaypointProgressTracker>();
         Player2_traker = GameObject.Find("Computer1").GetComponent<WaypointProgressTracker>();

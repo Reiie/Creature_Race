@@ -461,7 +461,7 @@ public class csCarState : MonoBehaviour
                     }
                 }
 
-                car.AccelControl = true;
+               // car.AccelControl = true;
                 break;
 
             case CARSTATE.BIG_JUMP_READY:

@@ -133,24 +133,29 @@ public class csGameFINISH : MonoBehaviour
                 Player1_Rank = 1;
                 // 첫 승리 업적 달성
                 UserManager.Instance().AchievementFirstVictory();
+
+                Debug.Log("이름 : 1등자리 ");
             }
             else if (Ranking.Player1_Win == false && Ranking.Player2_Win == true && Ranking.Player3_Win == false && Ranking.Player4_Win == false)
             {
                 Player2_traker.progressDistance = Player2_traker.progressDistance + 100000.0f;
                 Player2.transform.position = Winner1_Position.transform.position;
                 Player2_Rank = 1;
+                Debug.Log("말타지 : 1등자리 ");
             }
             else if (Ranking.Player1_Win == false && Ranking.Player2_Win == false && Ranking.Player3_Win == true && Ranking.Player4_Win == false)
             {
                 Player3_traker.progressDistance = Player3_traker.progressDistance + 100000.0f;
                 Player3.transform.position = Winner1_Position.transform.position;
                 Player3_Rank = 1;
+                Debug.Log("타랑 : 1등자리 ");
             }
             else if (Ranking.Player1_Win == false && Ranking.Player2_Win == false && Ranking.Player3_Win == false && Ranking.Player4_Win == true)
             {
                 Player4_traker.progressDistance = Player4_traker.progressDistance + 100000.0f;
                 Player4.transform.position = Winner1_Position.transform.position;
                 Player4_Rank = 1;
+                Debug.Log("더헛 : 1등자리 ");
             }
 
             if (P1_CollCheck.Game_End == true)
@@ -164,6 +169,8 @@ public class csGameFINISH : MonoBehaviour
 
                     Player1.transform.position = Winner2_Position.transform.position;
                     Player1_Rank = 2;
+
+                    Debug.Log("이름 : 2등자리 ");
                 }
 
                 else if (Player1_traker.progressDistance > Player2_traker.progressDistance &&
@@ -174,6 +181,8 @@ public class csGameFINISH : MonoBehaviour
 
                     Player1.transform.position = Winner2_Position.transform.position;
                     Player1_Rank = 2;
+
+                    Debug.Log("이름 : 2등자리 ");
                 }
 
                 else if (Player1_traker.progressDistance > Player2_traker.progressDistance &&
@@ -184,6 +193,8 @@ public class csGameFINISH : MonoBehaviour
 
                     Player1.transform.position = Winner2_Position.transform.position;
                     Player1_Rank = 2;
+
+                    Debug.Log("이름 : 2등자리 ");
                 }
                 /// 1P 3등 완주
                 else if (Player1_traker.progressDistance < Player2_traker.progressDistance &&
@@ -194,6 +205,8 @@ public class csGameFINISH : MonoBehaviour
 
                     Player1.transform.position = Winner3_Position.transform.position;
                     Player1_Rank = 3;
+
+                    Debug.Log("이름 : 3등자리 ");
                 }
 
                 else if (Player1_traker.progressDistance > Player2_traker.progressDistance &&
@@ -204,6 +217,8 @@ public class csGameFINISH : MonoBehaviour
 
                     Player1.transform.position = Winner3_Position.transform.position;
                     Player1_Rank = 3;
+
+                    Debug.Log("이름 : 3등자리 ");
                 }
 
                 else if (Player1_traker.progressDistance < Player2_traker.progressDistance &&
@@ -214,6 +229,8 @@ public class csGameFINISH : MonoBehaviour
 
                     Player1.transform.position = Winner3_Position.transform.position;
                     Player1_Rank = 3;
+
+                    Debug.Log("이름 : 3등자리 ");
                 }
             }
 
@@ -228,6 +245,8 @@ public class csGameFINISH : MonoBehaviour
 
                     Player2.transform.position = Winner2_Position.transform.position;
                     Player2_Rank = 2;
+
+                    Debug.Log("말타지 : 2등자리 ");
                 }
 
                 else if (Player2_traker.progressDistance > Player1_traker.progressDistance &&
@@ -238,6 +257,8 @@ public class csGameFINISH : MonoBehaviour
 
                     Player2.transform.position = Winner2_Position.transform.position;
                     Player2_Rank = 2;
+
+                    Debug.Log("말타지 : 2등자리 ");
                 }
 
                 else if (Player2_traker.progressDistance > Player1_traker.progressDistance &&
@@ -248,6 +269,8 @@ public class csGameFINISH : MonoBehaviour
 
                     Player2.transform.position = Winner2_Position.transform.position;
                     Player2_Rank = 2;
+
+                    Debug.Log("말타지 : 2등자리 ");
                 }
 
                 /// 2P 3 등 완주
@@ -255,11 +278,12 @@ public class csGameFINISH : MonoBehaviour
                          Player2_traker.progressDistance < Player3_traker.progressDistance &&
                          Player2_traker.progressDistance > Player4_traker.progressDistance)
                 {
-
                     Player2_traker.progressDistance = Player2_traker.progressDistance + 1000.0f;
 
                     Player2.transform.position = Winner3_Position.transform.position;
                     Player2_Rank = 3;
+
+                    Debug.Log("말타지 : 3등자리 ");
                 }
 
                 else if (Player2_traker.progressDistance > Player1_traker.progressDistance &&
@@ -270,6 +294,8 @@ public class csGameFINISH : MonoBehaviour
 
                     Player2.transform.position = Winner3_Position.transform.position;
                     Player2_Rank = 3;
+
+                    Debug.Log("말타지 : 3등자리 ");
                 }
 
                 else if (Player2_traker.progressDistance < Player1_traker.progressDistance &&
@@ -280,6 +306,8 @@ public class csGameFINISH : MonoBehaviour
 
                     Player2.transform.position = Winner3_Position.transform.position;
                     Player2_Rank = 3;
+
+                    Debug.Log("말타지 : 3등자리 ");
                 }
             }
 
@@ -294,6 +322,8 @@ public class csGameFINISH : MonoBehaviour
 
                     Player3.transform.position = Winner2_Position.transform.position;
                     Player3_Rank = 2;
+
+                    Debug.Log("타랑 : 2등자리 ");
                 }
 
                 else if (Player3_traker.progressDistance > Player2_traker.progressDistance &&
@@ -304,6 +334,8 @@ public class csGameFINISH : MonoBehaviour
 
                     Player3.transform.position = Winner2_Position.transform.position;
                     Player3_Rank = 2;
+
+                    Debug.Log("타랑 : 2등자리 ");
                 }
 
                 else if (Player3_traker.progressDistance > Player2_traker.progressDistance &&
@@ -314,6 +346,8 @@ public class csGameFINISH : MonoBehaviour
 
                     Player3.transform.position = Winner2_Position.transform.position;
                     Player3_Rank = 2;
+
+                    Debug.Log("타랑 : 2등자리 ");
                 }
 
                 /// 3P 3 등 완주
@@ -325,6 +359,8 @@ public class csGameFINISH : MonoBehaviour
 
                     Player3.transform.position = Winner3_Position.transform.position;
                     Player3_Rank = 3;
+
+                    Debug.Log("타랑 : 3등자리 ");
                 }
 
                 else if (Player3_traker.progressDistance > Player2_traker.progressDistance &&
@@ -335,6 +371,8 @@ public class csGameFINISH : MonoBehaviour
 
                     Player3.transform.position = Winner3_Position.transform.position;
                     Player3_Rank = 3;
+
+                    Debug.Log("타랑 : 3등자리 ");
                 }
 
                 else if (Player3_traker.progressDistance < Player2_traker.progressDistance &&
@@ -345,6 +383,8 @@ public class csGameFINISH : MonoBehaviour
 
                     Player3.transform.position = Winner3_Position.transform.position;
                     Player3_Rank = 3;
+
+                    Debug.Log("타랑 : 3등자리 ");
                 }
             }
 
@@ -359,6 +399,8 @@ public class csGameFINISH : MonoBehaviour
 
                     Player4.transform.position = Winner2_Position.transform.position;
                     Player4_Rank = 2;
+
+                    Debug.Log("더헛 : 2등자리 ");
                 }
 
                 else if (Player4_traker.progressDistance > Player2_traker.progressDistance &&
@@ -369,6 +411,8 @@ public class csGameFINISH : MonoBehaviour
 
                     Player4.transform.position = Winner2_Position.transform.position;
                     Player4_Rank = 2;
+
+                    Debug.Log("더헛 : 2등자리 ");
                 }
 
                 else if (Player4_traker.progressDistance > Player2_traker.progressDistance &&
@@ -379,6 +423,8 @@ public class csGameFINISH : MonoBehaviour
 
                     Player4.transform.position = Winner2_Position.transform.position;
                     Player4_Rank = 2;
+
+                    Debug.Log("더헛 : 2등자리 ");
                 }
 
                 /// 4P 3등 완주
@@ -390,6 +436,8 @@ public class csGameFINISH : MonoBehaviour
 
                     Player4.transform.position = Winner3_Position.transform.position;
                     Player4_Rank = 3;
+
+                    Debug.Log("더헛 : 3등자리 ");
                 }
 
                 else if (Player4_traker.progressDistance > Player2_traker.progressDistance &&
@@ -400,6 +448,8 @@ public class csGameFINISH : MonoBehaviour
 
                     Player4.transform.position = Winner3_Position.transform.position;
                     Player4_Rank = 3;
+
+                    Debug.Log("더헛 : 3등자리 ");
                 }
 
                 else if (Player4_traker.progressDistance < Player2_traker.progressDistance &&
@@ -410,27 +460,37 @@ public class csGameFINISH : MonoBehaviour
 
                     Player4.transform.position = Winner3_Position.transform.position;
                     Player4_Rank = 3;
+
+                    Debug.Log("더헛 : 3등자리 ");
                 }
             }
             if (P1_CollCheck.Game_End == false)     /// 1P 완주못함
             {
                 Player1.transform.position = Retire1_Position.transform.position;
                 Player1_Rank = -1;
+
+                Debug.Log("이름 : 완주못함 ");
             }
             if (P2_CollCheck.Game_End == false)     /// 2P 완주못함
             {
                 Player2.transform.position = Retire2_Position.transform.position;
                 Player2_Rank = -1;
+
+                Debug.Log("말타지 : 완주못함 ");
             }
             if (P3_CollCheck.Game_End == false)     /// 3P 완주못함
             {
                 Player3.transform.position = Retire3_Position.transform.position;
                 Player3_Rank = -1;
+
+                Debug.Log("타랑 : 완주못함 ");
             }
             if (P4_CollCheck.Game_End == false)     /// 4P 완주못함
             {
                 Player4.transform.position = Retire4_Position.transform.position;
                 Player4_Rank = -1;
+
+                Debug.Log("더헛 : 완주못함 ");
             }
 
             StartCoroutine(SceneTrans());

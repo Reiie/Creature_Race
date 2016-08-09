@@ -27,7 +27,9 @@ public class UserManager : MonoBehaviour {
         Cheonho
     }
 
-  //  public bool first = false;
+    //  public bool first = false;
+    public int distanceCount = 0; 
+
     public UISprite rewardIcon;
     public UILabel rewardAmount;
     public UILabel rewardGold;
@@ -166,7 +168,7 @@ public class UserManager : MonoBehaviour {
         invenLabel.text = name;
         inputLabel.text = name;
 
-      //  prefsInit();
+        //prefsInit();
 
         DateLabelUpdate();
         StartCoroutine(Init());
@@ -174,7 +176,7 @@ public class UserManager : MonoBehaviour {
 
     public void userInfoSave()
     {
-        
+        distanceCount = 0;
         PlayerPrefs.SetString("Name", name);
         PlayerPrefs.SetInt("Stamina", stamina);
         PlayerPrefs.SetInt("MyGold", myGold);

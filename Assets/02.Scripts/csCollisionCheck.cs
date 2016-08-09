@@ -184,6 +184,25 @@ public class csCollisionCheck : MonoBehaviour
             {
                 GetComponent<Rigidbody>().AddForce(transform.TransformVector(0.0f, 0.0f, 5.0f) * 10.0f);
 
+                switch (UserManager.Instance().distanceCount)
+
+                {
+                    case 0:
+                        tracker.progressDistance += tracker.progressDistance + 100000;
+                        UserManager.Instance().distanceCount++;
+                        break;
+                    case 1:
+                        tracker.progressDistance += tracker.progressDistance + 50000;
+                        UserManager.Instance().distanceCount++;
+                        break;
+                    case 2:
+                        tracker.progressDistance += tracker.progressDistance + 10000;
+                        UserManager.Instance().distanceCount++;
+                        break;
+                    default:
+                        break;
+                }
+
                 Ranking.Stage2_Over();
                 Lap_Time = GameTimer.Play_Time;
                 Game_End = true;
@@ -977,7 +996,7 @@ public class csCollisionCheck : MonoBehaviour
             {
                 GetComponent<AudioSource>().clip = bigReadyClip;
                 GetComponent<AudioSource>().Play();
-                car_state.BIG_JUMP_POWER = 480000;
+                car_state.BIG_JUMP_POWER = 520000;
                 car_state.Big_Jump_Target = other.GetComponent<Transform>().FindChild("Big_Jump_Point2");
                 car_state.carState = csCarState.CARSTATE.BIG_JUMP_READY;
             }
