@@ -128,6 +128,7 @@ public class csGameFINISH : MonoBehaviour
 
             if (Ranking.Player1_Win == true && Ranking.Player2_Win == false && Ranking.Player3_Win == false && Ranking.Player4_Win == false)
             {
+                Player1_traker.progressDistance = Player1_traker.progressDistance + 100000.0f;
                 Player1.transform.position = Winner1_Position.transform.position;
                 Player1_Rank = 1;
                 // 첫 승리 업적 달성
@@ -135,16 +136,19 @@ public class csGameFINISH : MonoBehaviour
             }
             else if (Ranking.Player1_Win == false && Ranking.Player2_Win == true && Ranking.Player3_Win == false && Ranking.Player4_Win == false)
             {
+                Player2_traker.progressDistance = Player2_traker.progressDistance + 100000.0f;
                 Player2.transform.position = Winner1_Position.transform.position;
                 Player2_Rank = 1;
             }
             else if (Ranking.Player1_Win == false && Ranking.Player2_Win == false && Ranking.Player3_Win == true && Ranking.Player4_Win == false)
             {
+                Player3_traker.progressDistance = Player3_traker.progressDistance + 100000.0f;
                 Player3.transform.position = Winner1_Position.transform.position;
                 Player3_Rank = 1;
             }
             else if (Ranking.Player1_Win == false && Ranking.Player2_Win == false && Ranking.Player3_Win == false && Ranking.Player4_Win == true)
             {
+                Player4_traker.progressDistance = Player4_traker.progressDistance + 100000.0f;
                 Player4.transform.position = Winner1_Position.transform.position;
                 Player4_Rank = 1;
             }
@@ -156,7 +160,7 @@ public class csGameFINISH : MonoBehaviour
                  Player1_traker.progressDistance > Player3_traker.progressDistance &&
                  Player1_traker.progressDistance > Player4_traker.progressDistance)
                 {
-                    Player1_traker.progressDistance = Player1_traker.progressDistance + 1000.0f;
+                    Player1_traker.progressDistance = Player1_traker.progressDistance + 10000.0f;
 
                     Player1.transform.position = Winner2_Position.transform.position;
                     Player1_Rank = 2;
@@ -166,7 +170,7 @@ public class csGameFINISH : MonoBehaviour
                          Player1_traker.progressDistance < Player3_traker.progressDistance &&
                          Player1_traker.progressDistance > Player4_traker.progressDistance)
                 {
-                    Player1_traker.progressDistance = Player1_traker.progressDistance + 1000.0f;
+                    Player1_traker.progressDistance = Player1_traker.progressDistance + 10000.0f;
 
                     Player1.transform.position = Winner2_Position.transform.position;
                     Player1_Rank = 2;
@@ -176,7 +180,7 @@ public class csGameFINISH : MonoBehaviour
                          Player1_traker.progressDistance > Player3_traker.progressDistance &&
                          Player1_traker.progressDistance < Player4_traker.progressDistance)
                 {
-                    Player1_traker.progressDistance = Player1_traker.progressDistance + 1000.0f;
+                    Player1_traker.progressDistance = Player1_traker.progressDistance + 10000.0f;
 
                     Player1.transform.position = Winner2_Position.transform.position;
                     Player1_Rank = 2;
@@ -186,7 +190,7 @@ public class csGameFINISH : MonoBehaviour
                  Player1_traker.progressDistance < Player3_traker.progressDistance &&
                  Player1_traker.progressDistance > Player4_traker.progressDistance)
                 {
-                    Player1_traker.progressDistance = Player1_traker.progressDistance + 100.0f;
+                    Player1_traker.progressDistance = Player1_traker.progressDistance + 1000.0f;
 
                     Player1.transform.position = Winner3_Position.transform.position;
                     Player1_Rank = 3;
@@ -196,7 +200,7 @@ public class csGameFINISH : MonoBehaviour
                          Player1_traker.progressDistance < Player3_traker.progressDistance &&
                          Player1_traker.progressDistance < Player4_traker.progressDistance)
                 {
-                    Player1_traker.progressDistance = Player1_traker.progressDistance + 100.0f;
+                    Player1_traker.progressDistance = Player1_traker.progressDistance + 1000.0f;
 
                     Player1.transform.position = Winner3_Position.transform.position;
                     Player1_Rank = 3;
@@ -206,7 +210,7 @@ public class csGameFINISH : MonoBehaviour
                          Player1_traker.progressDistance > Player3_traker.progressDistance &&
                          Player1_traker.progressDistance < Player4_traker.progressDistance)
                 {
-                    Player1_traker.progressDistance = Player1_traker.progressDistance + 100.0f;
+                    Player1_traker.progressDistance = Player1_traker.progressDistance + 1000.0f;
 
                     Player1.transform.position = Winner3_Position.transform.position;
                     Player1_Rank = 3;
@@ -220,7 +224,7 @@ public class csGameFINISH : MonoBehaviour
                  Player2_traker.progressDistance > Player3_traker.progressDistance &&
                  Player2_traker.progressDistance > Player4_traker.progressDistance)
                 {
-                    Player2_traker.progressDistance = Player2_traker.progressDistance + 1000.0f;
+                    Player2_traker.progressDistance = Player2_traker.progressDistance + 10000.0f;
 
                     Player2.transform.position = Winner2_Position.transform.position;
                     Player2_Rank = 2;
@@ -230,7 +234,7 @@ public class csGameFINISH : MonoBehaviour
                          Player2_traker.progressDistance < Player3_traker.progressDistance &&
                          Player2_traker.progressDistance > Player4_traker.progressDistance)
                 {
-                    Player2_traker.progressDistance = Player2_traker.progressDistance + 1000.0f;
+                    Player2_traker.progressDistance = Player2_traker.progressDistance + 10000.0f;
 
                     Player2.transform.position = Winner2_Position.transform.position;
                     Player2_Rank = 2;
@@ -240,7 +244,7 @@ public class csGameFINISH : MonoBehaviour
                          Player2_traker.progressDistance > Player3_traker.progressDistance &&
                          Player2_traker.progressDistance < Player4_traker.progressDistance)
                 {
-                    Player2_traker.progressDistance = Player2_traker.progressDistance + 1000.0f;
+                    Player2_traker.progressDistance = Player2_traker.progressDistance + 10000.0f;
 
                     Player2.transform.position = Winner2_Position.transform.position;
                     Player2_Rank = 2;
@@ -252,7 +256,7 @@ public class csGameFINISH : MonoBehaviour
                          Player2_traker.progressDistance > Player4_traker.progressDistance)
                 {
 
-                    Player2_traker.progressDistance = Player2_traker.progressDistance + 100.0f;
+                    Player2_traker.progressDistance = Player2_traker.progressDistance + 1000.0f;
 
                     Player2.transform.position = Winner3_Position.transform.position;
                     Player2_Rank = 3;
@@ -262,7 +266,7 @@ public class csGameFINISH : MonoBehaviour
                          Player2_traker.progressDistance < Player3_traker.progressDistance &&
                          Player2_traker.progressDistance < Player4_traker.progressDistance)
                 {
-                    Player2_traker.progressDistance = Player2_traker.progressDistance + 100.0f;
+                    Player2_traker.progressDistance = Player2_traker.progressDistance + 1000.0f;
 
                     Player2.transform.position = Winner3_Position.transform.position;
                     Player2_Rank = 3;
@@ -272,7 +276,7 @@ public class csGameFINISH : MonoBehaviour
                          Player2_traker.progressDistance > Player3_traker.progressDistance &&
                          Player2_traker.progressDistance < Player4_traker.progressDistance)
                 {
-                    Player2_traker.progressDistance = Player2_traker.progressDistance + 100.0f;
+                    Player2_traker.progressDistance = Player2_traker.progressDistance + 1000.0f;
 
                     Player2.transform.position = Winner3_Position.transform.position;
                     Player2_Rank = 3;
@@ -286,7 +290,7 @@ public class csGameFINISH : MonoBehaviour
                  Player3_traker.progressDistance > Player1_traker.progressDistance &&
                  Player3_traker.progressDistance > Player4_traker.progressDistance)
                 {
-                    Player3_traker.progressDistance = Player3_traker.progressDistance + 1000.0f;
+                    Player3_traker.progressDistance = Player3_traker.progressDistance + 10000.0f;
 
                     Player3.transform.position = Winner2_Position.transform.position;
                     Player3_Rank = 2;
@@ -296,7 +300,7 @@ public class csGameFINISH : MonoBehaviour
                          Player3_traker.progressDistance < Player1_traker.progressDistance &&
                          Player3_traker.progressDistance > Player4_traker.progressDistance)
                 {
-                    Player3_traker.progressDistance = Player3_traker.progressDistance + 1000.0f;
+                    Player3_traker.progressDistance = Player3_traker.progressDistance + 10000.0f;
 
                     Player3.transform.position = Winner2_Position.transform.position;
                     Player3_Rank = 2;
@@ -306,7 +310,7 @@ public class csGameFINISH : MonoBehaviour
                          Player3_traker.progressDistance > Player1_traker.progressDistance &&
                          Player3_traker.progressDistance < Player4_traker.progressDistance)
                 {
-                    Player3_traker.progressDistance = Player3_traker.progressDistance + 1000.0f;
+                    Player3_traker.progressDistance = Player3_traker.progressDistance + 10000.0f;
 
                     Player3.transform.position = Winner2_Position.transform.position;
                     Player3_Rank = 2;
@@ -317,7 +321,7 @@ public class csGameFINISH : MonoBehaviour
                          Player3_traker.progressDistance < Player1_traker.progressDistance &&
                          Player3_traker.progressDistance > Player4_traker.progressDistance)
                 {
-                    Player3_traker.progressDistance = Player3_traker.progressDistance + 100.0f;
+                    Player3_traker.progressDistance = Player3_traker.progressDistance + 1000.0f;
 
                     Player3.transform.position = Winner3_Position.transform.position;
                     Player3_Rank = 3;
@@ -327,7 +331,7 @@ public class csGameFINISH : MonoBehaviour
                          Player3_traker.progressDistance < Player1_traker.progressDistance &&
                          Player3_traker.progressDistance < Player4_traker.progressDistance)
                 {
-                    Player3_traker.progressDistance = Player3_traker.progressDistance + 100.0f;
+                    Player3_traker.progressDistance = Player3_traker.progressDistance + 1000.0f;
 
                     Player3.transform.position = Winner3_Position.transform.position;
                     Player3_Rank = 3;
@@ -337,7 +341,7 @@ public class csGameFINISH : MonoBehaviour
                          Player3_traker.progressDistance > Player1_traker.progressDistance &&
                          Player3_traker.progressDistance < Player4_traker.progressDistance)
                 {
-                    Player3_traker.progressDistance = Player3_traker.progressDistance + 100.0f;
+                    Player3_traker.progressDistance = Player3_traker.progressDistance + 1000.0f;
 
                     Player3.transform.position = Winner3_Position.transform.position;
                     Player3_Rank = 3;
@@ -351,7 +355,7 @@ public class csGameFINISH : MonoBehaviour
                  Player4_traker.progressDistance > Player3_traker.progressDistance &&
                  Player4_traker.progressDistance > Player1_traker.progressDistance)
                 {
-                    Player4_traker.progressDistance = Player4_traker.progressDistance + 1000.0f;
+                    Player4_traker.progressDistance = Player4_traker.progressDistance + 10000.0f;
 
                     Player4.transform.position = Winner2_Position.transform.position;
                     Player4_Rank = 2;
@@ -361,7 +365,7 @@ public class csGameFINISH : MonoBehaviour
                          Player4_traker.progressDistance < Player3_traker.progressDistance &&
                          Player4_traker.progressDistance > Player1_traker.progressDistance)
                 {
-                    Player4_traker.progressDistance = Player4_traker.progressDistance + 1000.0f;
+                    Player4_traker.progressDistance = Player4_traker.progressDistance + 10000.0f;
 
                     Player4.transform.position = Winner2_Position.transform.position;
                     Player4_Rank = 2;
@@ -371,7 +375,7 @@ public class csGameFINISH : MonoBehaviour
                          Player4_traker.progressDistance > Player3_traker.progressDistance &&
                          Player4_traker.progressDistance < Player1_traker.progressDistance)
                 {
-                    Player4_traker.progressDistance = Player4_traker.progressDistance + 1000.0f;
+                    Player4_traker.progressDistance = Player4_traker.progressDistance + 10000.0f;
 
                     Player4.transform.position = Winner2_Position.transform.position;
                     Player4_Rank = 2;
@@ -382,7 +386,7 @@ public class csGameFINISH : MonoBehaviour
                          Player4_traker.progressDistance < Player3_traker.progressDistance &&
                          Player4_traker.progressDistance > Player1_traker.progressDistance)
                 {
-                    Player4_traker.progressDistance = Player4_traker.progressDistance + 100.0f;
+                    Player4_traker.progressDistance = Player4_traker.progressDistance + 10000.0f;
 
                     Player4.transform.position = Winner3_Position.transform.position;
                     Player4_Rank = 3;
@@ -392,7 +396,7 @@ public class csGameFINISH : MonoBehaviour
                          Player4_traker.progressDistance < Player3_traker.progressDistance &&
                          Player4_traker.progressDistance < Player1_traker.progressDistance)
                 {
-                    Player4_traker.progressDistance = Player4_traker.progressDistance + 100.0f;
+                    Player4_traker.progressDistance = Player4_traker.progressDistance + 1000.0f;
 
                     Player4.transform.position = Winner3_Position.transform.position;
                     Player4_Rank = 3;
@@ -402,7 +406,7 @@ public class csGameFINISH : MonoBehaviour
                          Player4_traker.progressDistance > Player3_traker.progressDistance &&
                          Player4_traker.progressDistance < Player1_traker.progressDistance)
                 {
-                    Player4_traker.progressDistance = Player4_traker.progressDistance + 100.0f;
+                    Player4_traker.progressDistance = Player4_traker.progressDistance + 1000.0f;
 
                     Player4.transform.position = Winner3_Position.transform.position;
                     Player4_Rank = 3;
