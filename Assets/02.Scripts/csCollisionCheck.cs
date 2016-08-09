@@ -38,7 +38,8 @@ public class csCollisionCheck : MonoBehaviour
     public GameObject FKnock_Back_Effect;
     public GameObject BKnock_Back_Effect;
     ///
-
+    public AudioClip hitClip;
+    public AudioClip springClip;
 
     public bool Game_End = false;
 
@@ -124,7 +125,7 @@ public class csCollisionCheck : MonoBehaviour
             Destroy(C_Particle, 0.5f);
 
             car_state.HP -= collision.gameObject.GetComponent<csCarState>().Power;
-
+            GetComponent<AudioSource>().Play();
             if(car_state.HP <= 0)
             {
                 car_state.HP = 0;
