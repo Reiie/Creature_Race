@@ -40,6 +40,7 @@ public class csCollisionCheck : MonoBehaviour
     ///
     public AudioClip hitClip;
     public AudioClip springClip;
+    public AudioClip bigReadyClip;
 
     public bool Game_End = false;
 
@@ -119,7 +120,12 @@ public class csCollisionCheck : MonoBehaviour
     {
         if(collision.collider.tag == "Player")
         {
-            car_state.BigJump_Count = 0;
+            if (car_state.carState == csCarState.CARSTATE.BIG_JUMP_READY)
+            {
+                car_state.BigJump_Count = 0;
+                car_state.reverseTime = 0;
+            }
+
             GameObject C_Particle = Instantiate(Collision_Effect) as GameObject;
             C_Particle.transform.position = collision.transform.position + new Vector3 (-1, 1, 0);
             Destroy(C_Particle, 0.5f);
@@ -944,6 +950,8 @@ public class csCollisionCheck : MonoBehaviour
         {
             if (car_state.isJumper == true)
             {
+                GetComponent<AudioSource>().clip = bigReadyClip;
+                GetComponent<AudioSource>().Play();
                 car_state.BIG_JUMP_POWER = 400000;
                 car_state.Big_Jump_Target = other.GetComponent<Transform>().FindChild("Big_Jump_Point");
                 car_state.carState = csCarState.CARSTATE.BIG_JUMP_READY;
@@ -954,6 +962,8 @@ public class csCollisionCheck : MonoBehaviour
         {
             if (car_state.isJumper == true)
             {
+                GetComponent<AudioSource>().clip = bigReadyClip;
+                GetComponent<AudioSource>().Play();
                 car_state.BIG_JUMP_POWER = 480000;
                 car_state.Big_Jump_Target = other.GetComponent<Transform>().FindChild("Big_Jump_Point1");
                 car_state.carState = csCarState.CARSTATE.BIG_JUMP_READY;
@@ -964,6 +974,8 @@ public class csCollisionCheck : MonoBehaviour
         {
             if (car_state.isJumper == true)
             {
+                GetComponent<AudioSource>().clip = bigReadyClip;
+                GetComponent<AudioSource>().Play();
                 car_state.BIG_JUMP_POWER = 480000;
                 car_state.Big_Jump_Target = other.GetComponent<Transform>().FindChild("Big_Jump_Point2");
                 car_state.carState = csCarState.CARSTATE.BIG_JUMP_READY;
