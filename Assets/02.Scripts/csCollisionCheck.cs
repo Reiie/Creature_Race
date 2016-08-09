@@ -125,8 +125,9 @@ public class csCollisionCheck : MonoBehaviour
             Destroy(C_Particle, 0.5f);
 
             car_state.HP -= collision.gameObject.GetComponent<csCarState>().Power;
+            GetComponent<AudioSource>().clip = hitClip;
             GetComponent<AudioSource>().Play();
-            if(car_state.HP <= 0)
+            if (car_state.HP <= 0)
             {
                 car_state.HP = 0;
             }  
