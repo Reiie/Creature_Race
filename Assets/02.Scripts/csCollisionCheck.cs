@@ -928,6 +928,16 @@ public class csCollisionCheck : MonoBehaviour
         {
             if (car_state.isJumper == true)
             {
+                car_state.Big_Jump_Target = other.GetComponent<Transform>().FindChild("Big_Jump_Point");
+                car_state.carState = csCarState.CARSTATE.BIG_JUMP_READY;
+            }
+        }
+
+        if (other.tag == "Big_Jump_Area1")
+        {
+            if (car_state.isJumper == true)
+            {
+                car_state.Big_Jump_Target = other.GetComponent<Transform>().FindChild("Big_Jump_Point1");
                 car_state.carState = csCarState.CARSTATE.BIG_JUMP_READY;
             }
         }

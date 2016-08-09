@@ -39,6 +39,8 @@ public class csCarState : MonoBehaviour
 
     public Transform respawn;
     public Transform Big_Jump_Target;
+
+    public Transform Big_Jump_Target1;
     int AddForceCount = 0;
 
     float BackForce_Fix = 0;
@@ -84,6 +86,8 @@ public class csCarState : MonoBehaviour
         BACKFORCE,
         BIG_JUMP_READY,
         BIG_JUMP,
+        BIG_JUMP_READY1,
+        BIG_JUMP1,
         JUMP,
 		SMALL_JUMP
     }
@@ -98,6 +102,7 @@ public class csCarState : MonoBehaviour
         childBody = gameObject.transform.FindChild("Image").gameObject;
         car_body = gameObject.transform.FindChild("Body").gameObject;
         Big_Jump_Target = GameObject.Find("Big_Jump_Area").transform.FindChild("Big_Jump_Point");
+        Big_Jump_Target1 = GameObject.Find("Big_Jump_Area").transform.FindChild("Big_Jump_Point1");
         tracker = GetComponent<WaypointProgressTracker>();
         StartCoroutine(JumperTrigger());
     }
