@@ -22,7 +22,7 @@ public class csCarState : MonoBehaviour
 
     public GameObject Three_Particle;
     public GameObject Four_Particle;
-
+    public AudioClip bigJumpClip;
     /// 
 
     public int MaxHp = 1;
@@ -228,6 +228,8 @@ public class csCarState : MonoBehaviour
             BigJump_Count = 0;
             isBigJump = true;
             carState = CARSTATE.BIG_JUMP;
+            GetComponent<AudioSource>().clip = bigJumpClip;
+            GetComponent<AudioSource>().Play();
         }
 
         if (isBigJump)

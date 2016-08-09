@@ -371,7 +371,7 @@ public class csRanking : MonoBehaviour
                  Player2_traker.progressDistance < Player3_traker.progressDistance &&
                  Player2_traker.progressDistance > Player4_traker.progressDistance)
         {
-            Player2_Rank.text = "3 sT";
+            Player2_Rank.text = "3 th";
             Three_Blank.text = "말타지";
 
             P2_Car_State.maxSpeed = P2_Speed1_1x;
@@ -397,7 +397,7 @@ public class csRanking : MonoBehaviour
                  Player2_traker.progressDistance > Player3_traker.progressDistance &&
                  Player2_traker.progressDistance < Player4_traker.progressDistance)
         {
-            Player2_Rank.text = "3 sT";
+            Player2_Rank.text = "3 th";
             Three_Blank.text = "말타지";
 
             P2_Car_State.maxSpeed = P2_Speed1_1x;
