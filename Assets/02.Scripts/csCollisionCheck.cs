@@ -201,6 +201,9 @@ public class csCollisionCheck : MonoBehaviour
 
         if (other.tag == "Knock_Back")
         {
+            GetComponent<AudioSource>().clip = springClip;
+            GetComponent<AudioSource>().Play();
+
             csKnockBack_Tile Tile;
 
             Tile = other.GetComponent<csKnockBack_Tile>();
@@ -220,6 +223,9 @@ public class csCollisionCheck : MonoBehaviour
         }
         else if (other.tag == "!Knock_Back")
         {
+            GetComponent<AudioSource>().clip = springClip;
+            GetComponent<AudioSource>().Play();
+
             csKnockBack_Tile Tile;
 
             Tile = other.GetComponent<csKnockBack_Tile>();
