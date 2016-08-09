@@ -394,6 +394,16 @@ public class csCollisionCheck : MonoBehaviour
             tracker.progressDistance = 740;
         }
 
+        if (other.tag == "Progress_Distance_2-4")
+        {
+            tracker.progressDistance = 270;
+        }
+
+        if (other.tag == "Progress_Distance_2-5")
+        {
+            tracker.progressDistance = 630;
+        }
+
         if (other.tag == "Target_Release_008")///360
         {
             if (Checking_Rep == 1)
@@ -934,6 +944,7 @@ public class csCollisionCheck : MonoBehaviour
         {
             if (car_state.isJumper == true)
             {
+                car_state.BIG_JUMP_POWER = 400000;
                 car_state.Big_Jump_Target = other.GetComponent<Transform>().FindChild("Big_Jump_Point");
                 car_state.carState = csCarState.CARSTATE.BIG_JUMP_READY;
             }
@@ -943,7 +954,18 @@ public class csCollisionCheck : MonoBehaviour
         {
             if (car_state.isJumper == true)
             {
+                car_state.BIG_JUMP_POWER = 480000;
                 car_state.Big_Jump_Target = other.GetComponent<Transform>().FindChild("Big_Jump_Point1");
+                car_state.carState = csCarState.CARSTATE.BIG_JUMP_READY;
+            }
+        }
+
+        if (other.tag == "Big_Jump_Area2")
+        {
+            if (car_state.isJumper == true)
+            {
+                car_state.BIG_JUMP_POWER = 480000;
+                car_state.Big_Jump_Target = other.GetComponent<Transform>().FindChild("Big_Jump_Point2");
                 car_state.carState = csCarState.CARSTATE.BIG_JUMP_READY;
             }
         }

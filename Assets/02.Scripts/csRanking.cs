@@ -119,23 +119,23 @@ public class csRanking : MonoBehaviour
 		P3_Carcontroller = GameObject.Find("Computer2").GetComponent<CarController>();
 		P4_Carcontroller = GameObject.Find("Computer3").GetComponent<CarController>();
 
-        P1_Speed1_Ex = P1_Car_State.maxSpeed * 0.9f;
-        P1_Speed1_0x = P1_Car_State.maxSpeed;
+        P1_Speed1_Ex = P1_Car_State.maxSpeed * 0.8f;
+        P1_Speed1_0x = P1_Car_State.maxSpeed * 1.2f;
         P1_Speed1_1x = P1_Car_State.maxSpeed * 1.5f;
         P1_Speed1_2x = P1_Car_State.maxSpeed * 2.0f;
 
-        P2_Speed1_Ex = P1_Car_State.maxSpeed * 0.9f;
-        P2_Speed1_0x = P2_Car_State.maxSpeed;
+        P2_Speed1_Ex = P1_Car_State.maxSpeed * 0.8f;
+        P2_Speed1_0x = P2_Car_State.maxSpeed * 1.2f;
         P2_Speed1_1x = P2_Car_State.maxSpeed * 1.5f;
         P2_Speed1_2x = P2_Car_State.maxSpeed * 2.0f;
 
-        P3_Speed1_Ex = P1_Car_State.maxSpeed * 0.9f;
-        P3_Speed1_0x = P3_Car_State.maxSpeed;
+        P3_Speed1_Ex = P1_Car_State.maxSpeed * 0.8f;
+        P3_Speed1_0x = P3_Car_State.maxSpeed * 1.2f;
         P3_Speed1_1x = P3_Car_State.maxSpeed * 1.5f;
         P3_Speed1_2x = P3_Car_State.maxSpeed * 2.0f;
 
-        P4_Speed1_Ex = P1_Car_State.maxSpeed * 0.9f;
-        P4_Speed1_0x = P4_Car_State.maxSpeed;
+        P4_Speed1_Ex = P1_Car_State.maxSpeed * 0.8f;
+        P4_Speed1_0x = P4_Car_State.maxSpeed * 1.2f;
         P4_Speed1_1x = P4_Car_State.maxSpeed * 1.5f;
         P4_Speed1_2x = P4_Car_State.maxSpeed * 2.0f;
     }

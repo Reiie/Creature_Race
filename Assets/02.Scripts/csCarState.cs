@@ -46,6 +46,8 @@ public class csCarState : MonoBehaviour
     float BackForce_Fix = 0;
     float Climbing_Count = 0;
 
+    public int BIG_JUMP_POWER;
+
     GameObject childBody;
     GameObject car_body;
 
@@ -220,7 +222,7 @@ public class csCarState : MonoBehaviour
             BigJump_Count = BigJump_Count + Time.deltaTime;
         }
 
-        if (BigJump_Count > 3.0f)
+        if (BigJump_Count > 2.5f)
         {
             isbigJumpReady = false;
             BigJump_Count = 0;
@@ -558,8 +560,9 @@ public class csCarState : MonoBehaviour
             GetComponent<Rigidbody>().AddForce(transform.TransformVector(0.0f, 1.0f, 3.0f) * 800000);
         }
         else
-        {
-            GetComponent<Rigidbody>().AddForce(transform.TransformVector(0.0f, 1.0f, 3.0f) * 400000);
+        {///북마크! 400000 
+            Debug.Log("여기서힘주고있쓰");
+            GetComponent<Rigidbody>().AddForce(transform.TransformVector(0.0f, 1.0f, 3.0f) * BIG_JUMP_POWER);
         }
     }
 
