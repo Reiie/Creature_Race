@@ -151,7 +151,7 @@ public class Google_InAppBilling : MonoBehaviour, IStoreListener
 
                 // ex) gem 10개 지급
 
-                UserManager.Instance().myGold = UserManager.Instance().myGold + 100000000;
+                UserManager.Instance().myGold = UserManager.Instance().myGold + 10000;
                 UserManager.Instance().DateLabelUpdate();
 
                 break;

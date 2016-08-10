@@ -132,7 +132,7 @@ public class UserManager : MonoBehaviour {
 
               PlayerPrefs.SetString("Name","이름을 정해 주세요");
               PlayerPrefs.SetInt("Stamina", 100);
-              PlayerPrefs.SetInt("MyGold", 0);
+              PlayerPrefs.SetInt("MyGold", 10000);
               PlayerPrefs.SetInt("Year", 2040);
               PlayerPrefs.SetInt("Month", 1);
               PlayerPrefs.SetInt("Day", 1);
